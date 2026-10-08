@@ -37,9 +37,9 @@ MonoBehaviour:
   maxWeapons: 6
   maxItems: 6
   maxCardChoices: 4
-  xpBase: 5
-  xpLinear: 3
-  xpQuad: 0.32
+  xpBase: 4
+  xpLinear: 1.6
+  xpQuad: 0.1
   matchLength: 600
   modes:
   - mode: 0
@@ -54,7 +54,7 @@ MonoBehaviour:
     displayName: Kill Count
     description: Reach the kill target before 10:00.
     rewardMultiplier: 1.1
-  enemyHpPerMinute: 0.22
+  enemyHpPerMinute: 0.18
   enemyDamagePerMinute: 0.08
   enemySpeedPerMinute: 0.015
   enemyCap: 450

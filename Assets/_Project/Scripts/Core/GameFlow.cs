@@ -81,7 +81,7 @@ namespace MiniMayhem
             go.transform.SetParent(transform, false);
             Canvas = go.AddComponent<Canvas>();
             Canvas.renderMode = RenderMode.ScreenSpaceOverlay;
-            Canvas.sortingOrder = 10;
+            Canvas.sortingOrder = 100;
             var scaler = go.AddComponent<CanvasScaler>();
             scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
             scaler.referenceResolution = new Vector2(1920, 1080);
@@ -268,6 +268,7 @@ namespace MiniMayhem
 
         public void DestroyRun()
         {
+            resultsDelay = 0f;
             if (Run == null) return;
             Run.RunEnded -= OnRunEnded;
             Run.BossSpawned -= OnBossSpawned;

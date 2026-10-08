@@ -1,5 +1,6 @@
 # Helper for running Unity in batch mode against this project.
 #   ./Tools/unity.ps1 build          -> regenerate assets/prefabs/scenes (Mini Mayhem/Rebuild Project Assets)
+#   ./Tools/unity.ps1 resetdata      -> regenerate and reset all data assets to the code defaults
 #   ./Tools/unity.ps1 compile        -> just import + compile
 #   ./Tools/unity.ps1 player         -> build the Windows player into Builds/Windows
 #   ./Tools/unity.ps1 test EditMode  -> run edit-mode tests
@@ -15,6 +16,7 @@ $log = Join-Path $logDir "batch_$mode.log"
 $uargs = @("-batchmode", "-projectPath", $project, "-logFile", $log)
 switch ($mode) {
     "build"   { $uargs += @("-quit", "-executeMethod", "MiniMayhem.EditorTools.ProjectBuilder.BuildAll") }
+    "resetdata" { $uargs += @("-quit", "-executeMethod", "MiniMayhem.EditorTools.ProjectBuilder.ResetDataToDefaults") }
     "compile" { $uargs += @("-quit") }
     "player"  { $uargs += @("-quit", "-executeMethod", "MiniMayhem.EditorTools.MiniMayhemMenu.BuildWindowsPlayer") }
     "test"    {

@@ -26,8 +26,8 @@ MonoBehaviour:
   color: {r: 0.48235294, g: 0.8509804, b: 0.29411766, a: 1}
   colorMax: {r: 0.18039216, g: 0.9019608, b: 0.627451, a: 1}
   levels:
-  - damage: 10
-    cooldown: 0.9
+  - damage: 14
+    cooldown: 0.765
     amount: 1
     area: 1
     speed: 12
@@ -35,8 +35,8 @@ MonoBehaviour:
     pierce: 0
     knockback: 0.5
     note: 
-  - damage: 14
-    cooldown: 0.9
+  - damage: 19
+    cooldown: 0.765
     amount: 1
     area: 1
     speed: 12
@@ -44,8 +44,8 @@ MonoBehaviour:
     pierce: 0
     knockback: 0.5
     note: +40% damage.
-  - damage: 14
-    cooldown: 0.9
+  - damage: 19
+    cooldown: 0.765
     amount: 2
     area: 1
     speed: 12
@@ -53,8 +53,8 @@ MonoBehaviour:
     pierce: 0
     knockback: 0.5
     note: +1 pea.
-  - damage: 14
-    cooldown: 0.7
+  - damage: 19
+    cooldown: 0.595
     amount: 2
     area: 1
     speed: 13
@@ -62,8 +62,8 @@ MonoBehaviour:
     pierce: 0
     knockback: 0.5
     note: Fires faster.
-  - damage: 22
-    cooldown: 0.7
+  - damage: 30
+    cooldown: 0.595
     amount: 3
     area: 1.15
     speed: 14

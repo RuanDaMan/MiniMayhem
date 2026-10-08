@@ -135,7 +135,7 @@ namespace MiniMayhem.Tests
             var cfg = db.config;
             int total = 0;
             for (int l = 1; l <= 28; l++) total += cfg.XpToNext(l);
-            Assert.That(total, Is.InRange(2500, 7000), "~25-30 level ups from a 10 minute run's XP");
+            Assert.That(total, Is.InRange(1000, 5000), "~25-30 level ups from a 10 minute run's XP");
             Assert.Greater(cfg.XpToNext(2), cfg.XpToNext(1));
         }
     }

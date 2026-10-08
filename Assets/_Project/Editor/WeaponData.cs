@@ -12,8 +12,11 @@ namespace MiniMayhem.EditorTools
         const string ItemDir = SoRoot + "/Items";
         const string RecipeDir = SoRoot + "/Recipes";
 
+        // Global balance knobs applied to the tables below (first playtest pass).
+        const float DamageScale = 1.35f, CooldownScale = 0.85f;
+
         static WeaponLevel Lv(float dmg, float cd, int amt, float area, float speed, float dur, int pierce, float kb, string note) =>
-            new() { damage = dmg, cooldown = cd, amount = amt, area = area, speed = speed, duration = dur, pierce = pierce, knockback = kb, note = note };
+            new() { damage = Mathf.Round(dmg * DamageScale), cooldown = cd * CooldownScale, amount = amt, area = area, speed = speed, duration = dur, pierce = pierce, knockback = kb, note = note };
 
         static WeaponDefinition W(string id, string name, string desc, WeaponArchetype arch, TargetMode target, WeaponTags tags, WeaponForm form,
             ArtId icon, ArtId proj, string c0, string c1, bool starts, int unlockBiome, WeaponBehaviour b, params WeaponLevel[] levels)

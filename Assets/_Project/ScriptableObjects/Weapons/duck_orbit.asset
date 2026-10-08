@@ -26,8 +26,8 @@ MonoBehaviour:
   color: {r: 1, g: 0.88235295, b: 0.3019608, a: 1}
   colorMax: {r: 1, g: 0.6901961, b: 0, a: 1}
   levels:
-  - damage: 8
-    cooldown: 3
+  - damage: 11
+    cooldown: 2.5500002
     amount: 2
     area: 1
     speed: 3
@@ -35,8 +35,8 @@ MonoBehaviour:
     pierce: 0
     knockback: 1
     note: 
-  - damage: 11
-    cooldown: 3
+  - damage: 15
+    cooldown: 2.5500002
     amount: 2
     area: 1
     speed: 3
@@ -44,8 +44,8 @@ MonoBehaviour:
     pierce: 0
     knockback: 1
     note: +35% damage.
-  - damage: 11
-    cooldown: 3
+  - damage: 15
+    cooldown: 2.5500002
     amount: 3
     area: 1
     speed: 3
@@ -53,8 +53,8 @@ MonoBehaviour:
     pierce: 0
     knockback: 1
     note: +1 duck.
-  - damage: 11
-    cooldown: 3
+  - damage: 15
+    cooldown: 2.5500002
     amount: 3
     area: 1
     speed: 4
@@ -62,8 +62,8 @@ MonoBehaviour:
     pierce: 0
     knockback: 1.2
     note: Ducks spin faster.
-  - damage: 15
-    cooldown: 3
+  - damage: 20
+    cooldown: 2.5500002
     amount: 4
     area: 1.2
     speed: 4

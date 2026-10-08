@@ -73,6 +73,11 @@ namespace MiniMayhem.Tests
             Assert.AreEqual(2, inv.Weapons.Count);
             Assert.IsFalse(inv.Weapons[0].CanLevel, "evolved weapons do not level");
             Assert.IsTrue(meta.IsDiscovered("evo:pea_cannon"));
+            for (int i = 0; i < 30; i++)
+            {
+                Run.LevelUp.Roll();
+                Assert.IsFalse(Run.LevelUp.Current.Any(c => c.weapon != null && c.weapon.id == "pea_shooter"), "evolved base weapon is not offered again");
+            }
         }
 
         [UnityTest]

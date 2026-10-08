@@ -26,8 +26,8 @@ MonoBehaviour:
   color: {r: 0.76862746, g: 0.5411765, b: 0.32156864, a: 1}
   colorMax: {r: 1, g: 0.56078434, b: 0.78039217, a: 1}
   levels:
-  - damage: 8
-    cooldown: 7
+  - damage: 11
+    cooldown: 5.9500003
     amount: 1
     area: 1
     speed: 0
@@ -35,8 +35,8 @@ MonoBehaviour:
     pierce: 0
     knockback: 0.3
     note: 
-  - damage: 11
-    cooldown: 7
+  - damage: 15
+    cooldown: 5.9500003
     amount: 1
     area: 1
     speed: 0
@@ -44,8 +44,8 @@ MonoBehaviour:
     pierce: 0
     knockback: 0.3
     note: +35% damage.
-  - damage: 11
-    cooldown: 7
+  - damage: 15
+    cooldown: 5.9500003
     amount: 2
     area: 1
     speed: 0
@@ -53,8 +53,8 @@ MonoBehaviour:
     pierce: 0
     knockback: 0.3
     note: +1 teddy.
-  - damage: 11
-    cooldown: 5
+  - damage: 15
+    cooldown: 4.25
     amount: 2
     area: 1
     speed: 0
@@ -62,8 +62,8 @@ MonoBehaviour:
     pierce: 0
     knockback: 0.3
     note: Teddies drop sooner and stay longer.
-  - damage: 15
-    cooldown: 5
+  - damage: 20
+    cooldown: 4.25
     amount: 2
     area: 1
     speed: 0

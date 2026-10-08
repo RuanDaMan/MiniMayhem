@@ -26,8 +26,8 @@ MonoBehaviour:
   color: {r: 0.65882355, g: 0.54509807, b: 1, a: 1}
   colorMax: {r: 0.49803922, g: 0.9529412, b: 1, a: 1}
   levels:
-  - damage: 16
-    cooldown: 1.4
+  - damage: 22
+    cooldown: 1.19
     amount: 1
     area: 1
     speed: 0
@@ -35,8 +35,8 @@ MonoBehaviour:
     pierce: 0
     knockback: 0.3
     note: 
-  - damage: 20
-    cooldown: 1.4
+  - damage: 27
+    cooldown: 1.19
     amount: 1
     area: 1
     speed: 0
@@ -44,8 +44,8 @@ MonoBehaviour:
     pierce: 0
     knockback: 0.3
     note: +25% damage.
-  - damage: 20
-    cooldown: 1.4
+  - damage: 27
+    cooldown: 1.19
     amount: 1
     area: 1
     speed: 0
@@ -53,8 +53,8 @@ MonoBehaviour:
     pierce: 1
     knockback: 0.3
     note: +1 chain.
-  - damage: 20
-    cooldown: 1.1
+  - damage: 27
+    cooldown: 0.93500006
     amount: 1
     area: 1
     speed: 0
@@ -62,8 +62,8 @@ MonoBehaviour:
     pierce: 1
     knockback: 0.3
     note: Zaps more often.
-  - damage: 28
-    cooldown: 1.1
+  - damage: 38
+    cooldown: 0.93500006
     amount: 2
     area: 1.1
     speed: 0

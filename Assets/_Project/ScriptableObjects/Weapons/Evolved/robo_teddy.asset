@@ -26,8 +26,8 @@ MonoBehaviour:
   color: {r: 0.8509804, g: 0.87058824, b: 0.9098039, a: 1}
   colorMax: {r: 0.8509804, g: 0.87058824, b: 0.9098039, a: 1}
   levels:
-  - damage: 14
-    cooldown: 1
+  - damage: 19
+    cooldown: 0.85
     amount: 1
     area: 1
     speed: 0

@@ -26,8 +26,8 @@ MonoBehaviour:
   color: {r: 1, g: 0.8235294, b: 0.24705882, a: 1}
   colorMax: {r: 1, g: 0.56078434, b: 0.78039217, a: 1}
   levels:
-  - damage: 9
-    cooldown: 1
+  - damage: 12
+    cooldown: 0.85
     amount: 1
     area: 1
     speed: 9
@@ -35,8 +35,8 @@ MonoBehaviour:
     pierce: 0
     knockback: 0.3
     note: 
-  - damage: 12
-    cooldown: 1
+  - damage: 16
+    cooldown: 0.85
     amount: 1
     area: 1
     speed: 9
@@ -44,8 +44,8 @@ MonoBehaviour:
     pierce: 0
     knockback: 0.3
     note: +33% damage.
-  - damage: 12
-    cooldown: 1
+  - damage: 16
+    cooldown: 0.85
     amount: 2
     area: 1
     speed: 9
@@ -53,8 +53,8 @@ MonoBehaviour:
     pierce: 0
     knockback: 0.3
     note: +1 star.
-  - damage: 12
-    cooldown: 0.8
+  - damage: 16
+    cooldown: 0.68
     amount: 2
     area: 1
     speed: 10
@@ -62,8 +62,8 @@ MonoBehaviour:
     pierce: 0
     knockback: 0.3
     note: Casts faster.
-  - damage: 16
-    cooldown: 0.8
+  - damage: 22
+    cooldown: 0.68
     amount: 3
     area: 1.15
     speed: 10

@@ -26,8 +26,8 @@ MonoBehaviour:
   color: {r: 1, g: 0.3019608, b: 0.42745098, a: 1}
   colorMax: {r: 1, g: 0.18039216, b: 0.76862746, a: 1}
   levels:
-  - damage: 6
-    cooldown: 3
+  - damage: 8
+    cooldown: 2.5500002
     amount: 1
     area: 1
     speed: 0
@@ -35,8 +35,8 @@ MonoBehaviour:
     pierce: 0
     knockback: 0.2
     note: 
-  - damage: 8
-    cooldown: 3
+  - damage: 11
+    cooldown: 2.5500002
     amount: 1
     area: 1
     speed: 0
@@ -44,8 +44,8 @@ MonoBehaviour:
     pierce: 0
     knockback: 0.2
     note: +33% damage.
-  - damage: 8
-    cooldown: 3
+  - damage: 11
+    cooldown: 2.5500002
     amount: 1
     area: 1.4
     speed: 0
@@ -53,8 +53,8 @@ MonoBehaviour:
     pierce: 0
     knockback: 0.2
     note: Wider beam.
-  - damage: 8
-    cooldown: 3
+  - damage: 11
+    cooldown: 2.5500002
     amount: 1
     area: 1.4
     speed: 0
@@ -62,8 +62,8 @@ MonoBehaviour:
     pierce: 0
     knockback: 0.2
     note: Beam lasts longer.
-  - damage: 11
-    cooldown: 3
+  - damage: 15
+    cooldown: 2.5500002
     amount: 2
     area: 1.45
     speed: 0

@@ -30,7 +30,7 @@ MonoBehaviour:
   boss: {fileID: 11400000, guid: 90611bc9a46c8c24b9613ff099a21a6b, type: 2}
   waves: {fileID: 11400000, guid: cf43cf04832b0aa43bcd87a5c393b855, type: 2}
   matchStyles: 000000000100000000000000
-  killTarget: 700
+  killTarget: 1400
   groundA: {r: 0.9411765, g: 0.8156863, b: 0.5411765, a: 1}
   groundB: {r: 0.9019608, g: 0.7607843, b: 0.47843137, a: 1}
   wallColor: {r: 0.76862746, g: 0.5411765, b: 0.32156864, a: 1}

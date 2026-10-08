@@ -30,10 +30,21 @@ namespace MiniMayhem.EditorTools
             Debug.Log("[MiniMayhem] Rebuild Project Assets complete.");
         }
 
+        /// <summary>Like BuildAll, but resets every data asset to the values in code (loses Inspector tuning).</summary>
+        public static void ResetDataToDefaults()
+        {
+            OverwriteData = true;
+            try { BuildAll(); }
+            finally { OverwriteData = false; }
+        }
+
         public static GameDatabase BuildData()
         {
             var cfg = LoadOrCreate<GameConfig>(SoRoot + "/GameConfig.asset", null);
+            bool keep = OverwriteData;
+            OverwriteData = false;
             var db = LoadOrCreate<GameDatabase>(DatabasePath, null);
+            OverwriteData = keep;
             db.config = cfg;
             WeaponData.Build(db);
             WorldData.Build(db);

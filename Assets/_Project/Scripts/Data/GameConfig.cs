@@ -34,9 +34,9 @@ namespace MiniMayhem
         public int maxCardChoices = 4;
 
         [Header("XP curve: xp(level) = base + linear*level + quad*level^2")]
-        public float xpBase = 5f;
-        public float xpLinear = 3f;
-        public float xpQuad = 0.32f;
+        public float xpBase = 4f;
+        public float xpLinear = 1.6f;
+        public float xpQuad = 0.1f;
 
         [Header("Match")]
         public float matchLength = 600f;
@@ -48,7 +48,7 @@ namespace MiniMayhem
         };
 
         [Header("Enemy scaling")]
-        public float enemyHpPerMinute = 0.22f;
+        public float enemyHpPerMinute = 0.18f;
         public float enemyDamagePerMinute = 0.08f;
         public float enemySpeedPerMinute = 0.015f;
         public int enemyCap = 450;

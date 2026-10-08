@@ -18,16 +18,33 @@ namespace MiniMayhem.EditorTools
             AssetDatabase.CreateFolder(parent, leaf);
         }
 
+        /// <summary>When set, existing data assets are reset to the values in code (Mini Mayhem > Reset Data To Defaults).</summary>
+        public static bool OverwriteData;
+
         /// <summary>
         /// Load an asset or create it. init runs only on creation unless overwrite is set, so hand-tuned values
         /// survive rebuilds.
         /// </summary>
+
         public static T LoadOrCreate<T>(string path, System.Action<T> init, bool overwrite = false) where T : ScriptableObject
         {
             var a = AssetDatabase.LoadAssetAtPath<T>(path);
             if (a != null)
             {
-                if (overwrite) { init?.Invoke(a); EditorUtility.SetDirty(a); }
+                if (overwrite || OverwriteData)
+                {
+                    if (init != null) init(a);
+                    else
+                    {
+                        // Reset to the class defaults.
+                        var fresh = ScriptableObject.CreateInstance<T>();
+                        string name = a.name;
+                        EditorUtility.CopySerialized(fresh, a);
+                        a.name = name;
+                        Object.DestroyImmediate(fresh);
+                    }
+                    EditorUtility.SetDirty(a);
+                }
                 return a;
             }
             EnsureFolder(path.Substring(0, path.LastIndexOf('/')));

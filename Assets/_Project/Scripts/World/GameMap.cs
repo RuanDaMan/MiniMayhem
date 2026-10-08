@@ -317,5 +317,21 @@ namespace MiniMayhem
         }
 
         public IReadOnlyList<Rect> Obstacles => obstacles;
+
+        /// <summary>Nearest hazard patch centre within range (for tests and debugging).</summary>
+        public bool FindHazard(Vector2 near, float range, out Vector2 centre)
+        {
+            centre = default;
+            float best = range * range;
+            bool found = false;
+            var all = new List<Patch>(arenaPatches);
+            foreach (var ch in chunks.Values) all.AddRange(ch.patches);
+            foreach (var p in all)
+            {
+                float d = (p.pos - near).sqrMagnitude;
+                if (d < best) { best = d; centre = p.pos; found = true; }
+            }
+            return found;
+        }
     }
 }

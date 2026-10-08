@@ -23,8 +23,9 @@ namespace MiniMayhem
 
         public readonly List<WeaponInstance> Weapons = new();
         public readonly List<OwnedItem> Items = new();
-        /// <summary>Ids removed from the card pool (banished, or consumed by a fusion).</summary>
+        /// <summary>Card subjects banished for this run ("w:id" / "i:id").</summary>
         public readonly HashSet<string> Banished = new();
+        /// <summary>Base weapon ids that were evolved or fused away (never offered again this run).</summary>
         public readonly HashSet<string> Consumed = new();
         public int Evolutions, Fusions;
 
@@ -145,6 +146,7 @@ namespace MiniMayhem
         {
             if (!AvailableEvolutions().Contains(r)) return null;
             var w = Replace(Find(r.weapon), r.result);
+            Consumed.Add(r.weapon.id); // the base weapon lives on as its evolved form
             Evolutions++;
             run.Meta?.Discover("w:" + r.result.id);
             run.Meta?.Discover("evo:" + r.result.id);

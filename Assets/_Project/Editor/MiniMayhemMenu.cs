@@ -10,6 +10,13 @@ namespace MiniMayhem.EditorTools
         [MenuItem("Mini Mayhem/Rebuild Project Assets")]
         public static void Rebuild() => ProjectBuilder.BuildAll();
 
+        [MenuItem("Mini Mayhem/Reset Data To Defaults (overwrites tuning)")]
+        public static void ResetData()
+        {
+            if (EditorUtility.DisplayDialog("Reset data", "Overwrite every weapon, item, enemy, biome, skill and config asset with the defaults from code?", "Reset", "Cancel"))
+                ProjectBuilder.ResetDataToDefaults();
+        }
+
         [MenuItem("Mini Mayhem/Open Game Scene")]
         public static void OpenScene()
         {
