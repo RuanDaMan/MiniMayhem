@@ -10,7 +10,7 @@ namespace MiniMayhem
     /// <summary>
     /// Info pages generated from the game data: Weapons, Items, Evolutions, Fusions, Enemies, Biomes, Stats.
     /// Entries stay "???" until discovered; recipe requirements show once the base weapon is known.
-    /// LB/RB switch tabs.
+    /// LT/RT switch tabs (LB/RB switch hub pages).
     /// </summary>
     public class CodexScreen : UiScreen
     {
@@ -34,14 +34,12 @@ namespace MiniMayhem
         protected override void BuildContent()
         {
             Ui.Panel(Root, "Bg", new Color(0.14f, 0.11f, 0.21f), false).rectTransform.Stretch();
-            var header = Ui.OutlinedText(Root, "Codex", 60, UiColors.Gold, TextAlignmentOptions.Left);
-            header.rectTransform.Place(new Vector2(0, 1), new Vector2(50, -20), new Vector2(400, 80), new Vector2(0, 1));
-            progress = Ui.Text(Root, "", 26, UiColors.TextDim, TextAlignmentOptions.Right);
-            progress.rectTransform.Place(new Vector2(1, 1), new Vector2(-50, -40), new Vector2(600, 40), new Vector2(1, 1));
+            progress = Ui.Text(Root, "", 24, UiColors.TextDim, TextAlignmentOptions.Left);
+            progress.rectTransform.Place(new Vector2(0, 0), new Vector2(54, 14), new Vector2(600, 36), Vector2.zero);
 
-            var tabsRow = Ui.Node(Root, "Tabs").Place(new Vector2(0.5f, 1), new Vector2(0, -110), new Vector2(1800, 70), new Vector2(0.5f, 1));
+            var tabsRow = Ui.Node(Root, "Tabs").Place(new Vector2(0.5f, 1), new Vector2(0, -112), new Vector2(1800, 70), new Vector2(0.5f, 1));
             Ui.HList(tabsRow.gameObject, 10);
-            var lb = Ui.Text(tabsRow, "LB", 26, UiColors.TextDim);
+            var lb = Ui.Text(tabsRow, "LT", 26, UiColors.TextDim);
             lb.rectTransform.sizeDelta = new Vector2(60, 60);
             for (int i = 0; i < Tabs.Length; i++)
             {
@@ -51,12 +49,12 @@ namespace MiniMayhem
                 tabLabels.Add(b.Label());
                 tabButtons.Add(b);
             }
-            var rb = Ui.Text(tabsRow, "RB", 26, UiColors.TextDim);
+            var rb = Ui.Text(tabsRow, "RT", 26, UiColors.TextDim);
             rb.rectTransform.sizeDelta = new Vector2(60, 60);
 
             // Scrollable list.
             var listPanel = Ui.Panel(Root, "List", UiColors.Panel);
-            listPanel.rectTransform.Place(new Vector2(0, 0), new Vector2(50, 50), new Vector2(560, 850), Vector2.zero);
+            listPanel.rectTransform.Place(new Vector2(0, 0), new Vector2(50, 56), new Vector2(560, 820), Vector2.zero);
             var vp = Ui.Node(listPanel.transform, "Viewport").Stretch(10, 10, 10, 10);
             vp.gameObject.AddComponent<RectMask2D>();
             listContent = Ui.Node(vp, "Content");
@@ -72,7 +70,7 @@ namespace MiniMayhem
             scroll.movementType = ScrollRect.MovementType.Clamped;
 
             var detail = Ui.Panel(Root, "Detail", UiColors.Panel);
-            detail.rectTransform.Place(new Vector2(1, 0), new Vector2(-50, 50), new Vector2(1220, 850), new Vector2(1, 0));
+            detail.rectTransform.Place(new Vector2(1, 0), new Vector2(-50, 56), new Vector2(1220, 820), new Vector2(1, 0));
             bigIcon = Ui.Icon(detail.transform, ArtId.Circle, 200);
             bigIcon.rectTransform.Place(new Vector2(0, 1), new Vector2(30, -30), new Vector2(200, 200), new Vector2(0, 1));
             title = Ui.OutlinedText(detail.transform, "", 48, UiColors.Gold, TextAlignmentOptions.Left);
@@ -135,8 +133,8 @@ namespace MiniMayhem
 
         public override void Tick()
         {
-            if (Input.PrevTab.WasPressedThisFrame()) { SetTab(tab - 1); Sfx.Play(SfxId.Click); }
-            else if (Input.NextTab.WasPressedThisFrame()) { SetTab(tab + 1); Sfx.Play(SfxId.Click); }
+            if (Input.PrevSubTab.WasPressedThisFrame()) { SetTab(tab - 1); Sfx.Play(SfxId.Click); }
+            else if (Input.NextSubTab.WasPressedThisFrame()) { SetTab(tab + 1); Sfx.Play(SfxId.Click); }
             var sel = Ui.Selected;
             if (sel == lastFocus) return;
             lastFocus = sel;

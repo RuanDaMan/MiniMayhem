@@ -10,7 +10,7 @@ namespace MiniMayhem
     public class Controls
     {
         public readonly InputActionMap Map;
-        public readonly InputAction Move, Pause, Submit, Back, Reroll, Banish, Skip, Navigate, PrevTab, NextTab, Zoom, Pan, Respec, Debug;
+        public readonly InputAction Move, Pause, Submit, Back, Reroll, Banish, Skip, Navigate, PrevTab, NextTab, PrevSubTab, NextSubTab, Zoom, Pan, Respec, Debug;
 
         public Controls()
         {
@@ -36,6 +36,8 @@ namespace MiniMayhem
             Skip = Button("Skip", "<Gamepad>/buttonEast", "<Keyboard>/backspace", "<Keyboard>/k");
             PrevTab = Button("PrevTab", "<Gamepad>/leftShoulder", "<Keyboard>/q");
             NextTab = Button("NextTab", "<Gamepad>/rightShoulder", "<Keyboard>/e");
+            PrevSubTab = Button("PrevSubTab", "<Gamepad>/leftTrigger", "<Keyboard>/z");
+            NextSubTab = Button("NextSubTab", "<Gamepad>/rightTrigger", "<Keyboard>/c");
             Respec = Button("Respec", "<Gamepad>/buttonNorth", "<Keyboard>/r");
             Debug = Button("Debug", "<Gamepad>/select", "<Keyboard>/f3");
 

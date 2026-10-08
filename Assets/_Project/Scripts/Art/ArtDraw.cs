@@ -36,6 +36,8 @@ namespace MiniMayhem
             ArtId.Circle or ArtId.Ring or ArtId.Glow or ArtId.Pixel or ArtId.Shadow or ArtId.Telegraph or ArtId.Puddle
                 or ArtId.StinkCloud or ArtId.ToxicCloud or ArtId.Swoosh or ArtId.Beam or ArtId.HazardPatch or ArtId.UiVignette
                 or ArtId.Spark or ArtId.Puff or ArtId.Bolt or ArtId.UiNode or ArtId.UiCard or ArtId.Wall => false,
+            // Decorative props are flat, outline-free background art; only things that matter get the ink outline.
+            >= ArtId.PropFlower and <= ArtId.PropSkull => false,
             _ => true,
         };
 

@@ -174,9 +174,13 @@ namespace MiniMayhem
             int k = rnd.Next(biome.props.Length);
             var sr = NewSprite("Prop", -60);
             sr.sprite = Art.Get(biome.props[k]);
-            sr.color = biome.propTints != null && biome.propTints.Length > 0 ? biome.propTints[k % biome.propTints.Length] : Color.white;
-            float size = 0.7f + (float)rnd.NextDouble() * 0.7f;
-            if (biome.props[k] == ArtId.PropTree || biome.props[k] == ArtId.PropPine) size *= 1.8f;
+            var tint = biome.propTints != null && biome.propTints.Length > 0 ? biome.propTints[k % biome.propTints.Length] : Color.white;
+            // Blend decor into the ground so enemies, pickups and obstacles (which keep their ink outlines) pop.
+            var c = Color.Lerp(tint, biome.groundB, 0.5f);
+            c.a = 0.8f;
+            sr.color = c;
+            float size = 0.55f + (float)rnd.NextDouble() * 0.5f;
+            if (biome.props[k] == ArtId.PropTree || biome.props[k] == ArtId.PropPine) size *= 1.5f;
             sr.transform.position = p;
             sr.transform.localScale = Vector3.one * size;
             sr.flipX = rnd.Next(2) == 0;

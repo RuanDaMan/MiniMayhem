@@ -13,10 +13,10 @@ namespace MiniMayhem.Tests
         public IEnumerator Codex_TabsAndDiscovery()
         {
             yield return Boot();
-            // Title -> Codex (third button).
-            yield return Tap(pad.dpad.down);
-            yield return Tap(pad.dpad.down);
+            // Title -> Play (Home) -> RB slides to the Codex page.
             yield return Tap(pad.buttonSouth);
+            Assert.AreEqual(FlowState.MatchSelect, flow.State);
+            yield return Tap(pad.rightShoulder);
             Assert.AreEqual(FlowState.Codex, flow.State);
             var codex = flow.Codex;
             Assert.AreEqual(0, codex.TabIndex);
@@ -26,7 +26,7 @@ namespace MiniMayhem.Tests
             int[] expected = { db.weapons.Count, db.items.Count, db.evolutions.Count, db.fusions.Count, -1, db.biomes.Count, -1 };
             for (int t = 1; t < 7; t++)
             {
-                yield return Tap(pad.rightShoulder);
+                yield return Tap(pad.rightTrigger);
                 Assert.AreEqual(t, codex.TabIndex);
                 if (expected[t] > 0) Assert.AreEqual(expected[t], codex.EntryCount, $"tab {t}");
                 if (t == 2) yield return TestUtil.Capture("M7_codex_evolutions");
@@ -37,7 +37,7 @@ namespace MiniMayhem.Tests
             // Discovery: enemies start hidden, then show up after being seen in a run.
             Assert.IsFalse(meta.IsDiscovered("e:slime"));
             yield return Tap(pad.buttonEast);
-            Assert.AreEqual(FlowState.Title, flow.State);
+            Assert.AreEqual(FlowState.MatchSelect, flow.State, "B returns Home");
             yield return StartRun();
             Run.Hero.GodMode = true;
             Simulate(Run, 5f);

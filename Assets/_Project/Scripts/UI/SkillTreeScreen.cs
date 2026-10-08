@@ -18,7 +18,7 @@ namespace MiniMayhem
         RectTransform viewport, content;
         readonly List<NodeView> nodes = new();
         readonly List<(Image line, SkillNodeDefinition a, SkillNodeDefinition b)> lines = new();
-        TextMeshProUGUI gold, infoTitle, infoBody;
+        TextMeshProUGUI infoTitle, infoBody;
         GameObject confirm;
         Button confirmYes, respecButton;
         float zoom = 1f;
@@ -69,13 +69,6 @@ namespace MiniMayhem
                 nodes.Add(v);
             }
 
-            var header = Ui.Panel(Root, "Header", new Color(0.08f, 0.06f, 0.13f, 0.95f), false);
-            header.rectTransform.Place(new Vector2(0.5f, 1), Vector2.zero, new Vector2(1920, 110), new Vector2(0.5f, 1));
-            var t = Ui.OutlinedText(header.transform, "Skill Tree", 60, UiColors.Gold, TextAlignmentOptions.Left);
-            t.rectTransform.Place(new Vector2(0, 0.5f), new Vector2(40, 0), new Vector2(600, 90), new Vector2(0, 0.5f));
-            gold = Ui.OutlinedText(header.transform, "", 44, UiColors.Gold, TextAlignmentOptions.Right);
-            gold.rectTransform.Place(new Vector2(1, 0.5f), new Vector2(-640, 0), new Vector2(500, 70), new Vector2(1, 0.5f));
-
             var info = Ui.Panel(Root, "Info", UiColors.Panel);
             info.rectTransform.Place(new Vector2(1, 0), new Vector2(-30, 30), new Vector2(560, 920), new Vector2(1, 0));
             infoTitle = Ui.OutlinedText(info.transform, "", 40, UiColors.Gold);
@@ -84,7 +77,7 @@ namespace MiniMayhem
             infoBody.rectTransform.Place(new Vector2(0.5f, 1), new Vector2(0, -100), new Vector2(510, 640), new Vector2(0.5f, 1));
             respecButton = Ui.Button(info.transform, "Y  Respec (full refund)", () => ShowConfirm(true), new Vector2(480, 70), 26);
             respecButton.GetComponent<RectTransform>().Place(new Vector2(0.5f, 0), new Vector2(0, 110), new Vector2(480, 70), new Vector2(0.5f, 0));
-            var hint = Ui.Text(info.transform, "A buy · LT/RT zoom · R-stick pan · B back", 22, UiColors.TextDim);
+            var hint = Ui.Text(info.transform, "A buy · LT/RT zoom · R-stick pan · B home", 22, UiColors.TextDim);
             hint.rectTransform.Place(new Vector2(0.5f, 0), new Vector2(0, 40), new Vector2(520, 40), new Vector2(0.5f, 0));
 
             var c = Ui.Panel(Root, "Confirm", UiColors.PanelLight);
@@ -131,7 +124,6 @@ namespace MiniMayhem
 
         public override void Refresh()
         {
-            gold.text = $"{Meta.Gold} gold";
             foreach (var v in nodes)
             {
                 int r = Meta.Rank(v.def);
@@ -232,7 +224,7 @@ namespace MiniMayhem
         public override void OnBack()
         {
             if (confirm.activeSelf) { ShowConfirm(false); return; }
-            flow.Go(FlowState.Title);
+            flow.GoHub(FlowState.MatchSelect);
         }
     }
 }

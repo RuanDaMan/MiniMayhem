@@ -4,10 +4,11 @@ using UnityEngine.UI;
 
 namespace MiniMayhem
 {
-    public enum FlowState { Title, MatchSelect, WeaponPick, Running, LevelUp, Paused, BossIntro, Results, SkillTree, Codex, Settings }
+    public enum FlowState { Title, MatchSelect, WeaponPick, Running, LevelUp, Paused, BossIntro, Results, SkillTree, Codex, Settings, Characters, Cosmetics }
 
     /// <summary>
-    /// The game's state machine: Title -> Match select -> Weapon pick -> Running (Level-up / Pause / Boss intro)
+    /// The game's state machine: Title -> Hub (Home / match select in the middle, LB/RB slides to Skill Tree,
+    /// Characters, Codex, Cosmetics) -> Weapon pick -> Running (Level-up / Pause / Boss intro)
     /// -> Results -> back to menus. Owns the UI screens and the current run.
     /// </summary>
     public class GameFlow : MonoBehaviour
@@ -31,6 +32,19 @@ namespace MiniMayhem
         public SkillTreeScreen SkillTree { get; private set; }
         public CodexScreen Codex { get; private set; }
         public SettingsScreen Settings { get; private set; }
+        public HubBarScreen HubBar { get; private set; }
+        public PlaceholderScreen Characters { get; private set; }
+        public PlaceholderScreen Cosmetics { get; private set; }
+
+        /// <summary>Hub pages, left to right. Home (match select) sits in the middle.</summary>
+        public static readonly FlowState[] HubPages = { FlowState.Characters, FlowState.SkillTree, FlowState.MatchSelect, FlowState.Codex, FlowState.Cosmetics };
+
+        public static string PageName(FlowState s) => s switch
+        {
+            FlowState.MatchSelect => "Home",
+            FlowState.SkillTree => "Skill Tree",
+            _ => s.ToString(),
+        };
 
         readonly List<UiScreen> screens = new();
         readonly Dictionary<(int, int), MatchMode> plannedModes = new();
@@ -62,6 +76,15 @@ namespace MiniMayhem
             SkillTree = Add(new SkillTreeScreen(), "SkillTree");
             Codex = Add(new CodexScreen(), "Codex");
             Settings = Add(new SettingsScreen(), "Settings");
+            Characters = Add(new PlaceholderScreen("Characters", ArtId.Hero,
+                "Pick who you play as.\n\nEach character will bring a starting weapon, a passive trait and a small stat tilt. " +
+                "For now everyone plays the same everyday hero, and you choose your starting weapon before each match.",
+                "Coming in a later update"), "Characters");
+            Cosmetics = Add(new PlaceholderScreen("Cosmetics", ArtId.ItemSmartHat,
+                "Dress up your hero.\n\nOutfits, hats and wearables (plus the armour system) will live here. " +
+                "The hero's clothes are already drawn as a separate layer so they can be swapped.",
+                "Coming in a later update"), "Cosmetics");
+            HubBar = Add(new HubBarScreen(), "HubBar");
             ApplySettings();
             Go(StartState ?? FlowState.Title);
         }
@@ -103,17 +126,32 @@ namespace MiniMayhem
 
         // ------------------------------------------------------------------ state machine
 
+        public static int HubIndex(FlowState s) => System.Array.IndexOf(HubPages, s);
+
+        /// <summary>True while the current screen is one of the hub pages (not e.g. the codex opened from pause).</summary>
+        public bool InHub => HubIndex(State) >= 0 && !(State == FlowState.Codex && codexReturn == FlowState.Paused);
+
         public void Go(FlowState next)
         {
+            var prev = State;
+            bool wasHub = InHub;
+            if (next == FlowState.Codex && (wasHub || prev == FlowState.Title || prev == FlowState.Results)) codexReturn = FlowState.MatchSelect;
             State = next;
             bool inRun = next is FlowState.Running or FlowState.LevelUp or FlowState.Paused or FlowState.BossIntro or FlowState.Results;
             if (Run != null) Run.Paused = next != FlowState.Running;
             foreach (var s in screens)
             {
-                bool show = s == Hud ? inRun && Run != null : s == ScreenFor(next) || (s == Results && next == FlowState.Results);
+                bool show = s == Hud ? inRun && Run != null : s == HubBar ? InHub : s == ScreenFor(next) || (s == Results && next == FlowState.Results);
                 if (show && !s.Visible) s.Show();
                 else if (!show && s.Visible) s.Hide();
-                else if (show && s.Visible && s != Hud) s.Show(); // re-entering: refresh + reselect
+                else if (show && s.Visible && s != Hud && s != HubBar) s.Show(); // re-entering: refresh + reselect
+            }
+            if (InHub)
+            {
+                HubBar.Root.SetAsLastSibling();
+                HubBar.Refresh();
+                // Slide the new page in from the side it lives on.
+                if (wasHub && prev != next) HubBar.SlideIn(ScreenFor(next), HubIndex(next) > HubIndex(prev) ? 1 : -1);
             }
             if (!inRun && Audio != null && Audio.CurrentMusic != "title") Audio.PlayTitleMusic();
         }
@@ -129,6 +167,8 @@ namespace MiniMayhem
             FlowState.SkillTree => SkillTree,
             FlowState.Codex => Codex,
             FlowState.Settings => Settings,
+            FlowState.Characters => Characters,
+            FlowState.Cosmetics => Cosmetics,
             _ => null,
         };
 
@@ -157,6 +197,12 @@ namespace MiniMayhem
                     break;
                 default:
                     var cur = ScreenFor(State);
+                    if (InHub)
+                    {
+                        int i = HubIndex(State);
+                        if (Controls.PrevTab.WasPressedThisFrame() && i > 0) { GoHub(HubPages[i - 1]); break; }
+                        if (Controls.NextTab.WasPressedThisFrame() && i < HubPages.Length - 1) { GoHub(HubPages[i + 1]); break; }
+                    }
                     if (cur != null && Controls.Back.WasPressedThisFrame()) cur.OnBack();
                     break;
             }
@@ -310,6 +356,14 @@ namespace MiniMayhem
             DestroyRun();
             CameraRig?.Snap(Vector2.zero);
             Go(menu);
+        }
+
+        /// <summary>Switch hub page (LB/RB or clicking the top bar).</summary>
+        public void GoHub(FlowState page)
+        {
+            if (page == State) return;
+            Sfx.Play(SfxId.Whoosh, 0.35f, 1.4f);
+            Go(page);
         }
 
         public void OpenSettings(FlowState returnTo)

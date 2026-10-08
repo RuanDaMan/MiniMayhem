@@ -5,7 +5,10 @@ using UnityEngine.UI;
 
 namespace MiniMayhem
 {
-    /// <summary>Pick a biome and one of its 3 matches. Shows map style, the (random) mode and completion.</summary>
+    /// <summary>
+    /// Home: plan and pick the next match (biome + one of its 3 matches; shows map style, the random mode and
+    /// completion). The middle page of the hub; LB/RB slide to the other pages.
+    /// </summary>
     public class MatchSelectScreen : UiScreen
     {
         class Slot { public BiomeDefinition biome; public int match; public Button button; public TextMeshProUGUI label; public Image check; }
@@ -33,15 +36,15 @@ namespace MiniMayhem
         protected override void BuildContent()
         {
             Ui.Panel(Root, "Bg", new Color(0.16f, 0.13f, 0.24f), false).rectTransform.Stretch();
-            var title = Ui.OutlinedText(Root, "Choose a match", 64, UiColors.Gold);
-            title.rectTransform.Place(new Vector2(0.5f, 1), new Vector2(0, -30), new Vector2(1200, 90), new Vector2(0.5f, 1));
+            var title = Ui.OutlinedText(Root, "Plan your next match", 34, UiColors.Text, TextAlignmentOptions.Left);
+            title.rectTransform.Place(new Vector2(0, 1), new Vector2(64, -112), new Vector2(1000, 50), new Vector2(0, 1));
 
-            var grid = Ui.Node(Root, "Grid").Place(new Vector2(0, 1), new Vector2(60, -140), new Vector2(1120, 860), new Vector2(0, 1));
+            var grid = Ui.Node(Root, "Grid").Place(new Vector2(0, 1), new Vector2(60, -168), new Vector2(1120, 820), new Vector2(0, 1));
             Ui.VList(grid.gameObject, 14, TextAnchor.UpperLeft);
             foreach (var b in Db.biomes)
             {
                 var row = Ui.Panel(grid, "Row_" + b.id, UiColors.Panel);
-                row.rectTransform.sizeDelta = new Vector2(1120, 126);
+                row.rectTransform.sizeDelta = new Vector2(1120, 118);
                 var name = Ui.Text(row.transform, b.displayName, 34, UiColors.Text, TextAlignmentOptions.Left);
                 name.fontStyle = FontStyles.Bold;
                 name.rectTransform.Place(new Vector2(0, 0.5f), new Vector2(26, 18), new Vector2(330, 50), new Vector2(0, 0.5f));
@@ -55,8 +58,8 @@ namespace MiniMayhem
                     var slot = new Slot { biome = b, match = m };
                     int mm = m;
                     var bd = b;
-                    slot.button = Ui.Button(row.transform, "", () => flow.BeginWeaponPick(bd, mm), new Vector2(236, 104), 22, $"Match{m}");
-                    slot.button.GetComponent<RectTransform>().Place(new Vector2(0, 0.5f), new Vector2(370 + m * 248, 0), new Vector2(236, 104), new Vector2(0, 0.5f));
+                    slot.button = Ui.Button(row.transform, "", () => flow.BeginWeaponPick(bd, mm), new Vector2(236, 100), 22, $"Match{m}");
+                    slot.button.GetComponent<RectTransform>().Place(new Vector2(0, 0.5f), new Vector2(370 + m * 248, 0), new Vector2(236, 100), new Vector2(0, 0.5f));
                     slot.label = Ui.Text(slot.button.transform, "", 22, UiColors.Text);
                     slot.label.rectTransform.Stretch(8, 6, 8, 6);
                     slot.check = Ui.Icon(slot.button.transform, ArtId.UiCheck, 40);
@@ -66,7 +69,7 @@ namespace MiniMayhem
             }
 
             var detail = Ui.Panel(Root, "Detail", UiColors.Panel);
-            detail.rectTransform.Place(new Vector2(1, 1), new Vector2(-60, -140), new Vector2(640, 860), new Vector2(1, 1));
+            detail.rectTransform.Place(new Vector2(1, 1), new Vector2(-60, -130), new Vector2(640, 860), new Vector2(1, 1));
             detailIcon = Ui.Icon(detail.transform, ArtId.Circle, 150);
             detailIcon.rectTransform.Place(new Vector2(0.5f, 1), new Vector2(0, -30), new Vector2(150, 150), new Vector2(0.5f, 1));
             detailTitle = Ui.OutlinedText(detail.transform, "", 40, UiColors.Gold);
@@ -74,7 +77,7 @@ namespace MiniMayhem
             detailBody = Ui.Text(detail.transform, "", 26, UiColors.Text, TextAlignmentOptions.TopLeft);
             detailBody.rectTransform.Place(new Vector2(0.5f, 1), new Vector2(0, -260), new Vector2(580, 580), new Vector2(0.5f, 1));
 
-            var hint = Ui.Text(Root, "A: choose   ·   B: back", 26, UiColors.TextDim);
+            var hint = Ui.Text(Root, "A: choose   ·   LB / RB: Skill Tree, Codex and more   ·   B: title", 26, UiColors.TextDim);
             hint.rectTransform.Place(new Vector2(0.5f, 0), new Vector2(0, 20), new Vector2(1200, 40), new Vector2(0.5f, 0));
         }
 

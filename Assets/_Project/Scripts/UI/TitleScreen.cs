@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 namespace MiniMayhem
 {
-    /// <summary>Main menu: Play, Skill Tree, Codex, Settings, Quit, with some bouncing critters for charm.</summary>
+    /// <summary>Splash screen: Play, Settings, Quit, with some bouncing critters for charm. Play opens the hub.</summary>
     public class TitleScreen : UiScreen
     {
         Button play;
-        TextMeshProUGUI gold, title, hint;
+        TextMeshProUGUI title, hint;
         readonly List<(RectTransform rt, Vector2 vel, float spin)> critters = new();
 
         protected override void BuildContent()
@@ -40,27 +40,16 @@ namespace MiniMayhem
             var sub = Ui.OutlinedText(Root, "a cute & chunky bullet heaven", 40, UiColors.Text);
             sub.rectTransform.Place(new Vector2(0.5f, 1f), new Vector2(0, -280), new Vector2(1200, 60), new Vector2(0.5f, 1f));
 
-            var col = Ui.Node(Root, "Buttons").Place(new Vector2(0.5f, 0.5f), new Vector2(60, -110), new Vector2(520, 560));
-            Ui.VList(col.gameObject, 18);
-            var size = new Vector2(480, 86);
-            play = Ui.Button(col, "Play", () => flow.Go(FlowState.MatchSelect), size, 40);
-            Ui.Button(col, "Skill Tree", () => flow.Go(FlowState.SkillTree), size, 36);
-            Ui.Button(col, "Codex", () => flow.OpenCodex(FlowState.Title), size, 36);
-            Ui.Button(col, "Settings", () => flow.OpenSettings(FlowState.Title), size, 36);
-            Ui.Button(col, "Quit", () => flow.Quit(), size, 36);
-
-            gold = Ui.OutlinedText(Root, "", 40, UiColors.Gold, TextAlignmentOptions.Right);
-            gold.rectTransform.Place(new Vector2(1, 1), new Vector2(-40, -30), new Vector2(600, 60), new Vector2(1, 1));
+            var col = Ui.Node(Root, "Buttons").Place(new Vector2(0.5f, 0.5f), new Vector2(60, -90), new Vector2(520, 360));
+            Ui.VList(col.gameObject, 22);
+            play = Ui.Button(col, "Play", () => flow.Go(FlowState.MatchSelect), new Vector2(480, 100), 46);
+            Ui.Button(col, "Settings", () => flow.OpenSettings(FlowState.Title), new Vector2(480, 80), 34);
+            Ui.Button(col, "Quit", () => flow.Quit(), new Vector2(480, 80), 34);
             hint = Ui.Text(Root, "Move: Left stick / WASD   ·   Select: A / Enter   ·   Back: B / Esc", 26, UiColors.TextDim);
             hint.rectTransform.Place(new Vector2(0.5f, 0), new Vector2(0, 30), new Vector2(1600, 40), new Vector2(0.5f, 0));
         }
 
         public override GameObject DefaultSelection => play != null ? play.gameObject : null;
-
-        public override void Refresh()
-        {
-            gold.text = $"{Meta.Gold} gold";
-        }
 
         public override void Tick()
         {

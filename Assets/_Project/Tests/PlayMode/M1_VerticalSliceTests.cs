@@ -31,6 +31,35 @@ namespace MiniMayhem.Tests
         }
 
         [UnityTest]
+        public IEnumerator Hub_PagesSlideLeftAndRight_FromHome()
+        {
+            yield return Boot();
+            Assert.AreEqual(3, flow.Title.Root.GetComponentsInChildren<UnityEngine.UI.Button>().Length, "splash: Play, Settings, Quit");
+            yield return Tap(pad.buttonSouth);
+            Assert.AreEqual(FlowState.MatchSelect, flow.State, "Play opens Home");
+            Assert.IsTrue(flow.HubBar.Visible);
+            yield return TestUtil.Capture("M1_home");
+            yield return Tap(pad.leftShoulder);
+            Assert.AreEqual(FlowState.SkillTree, flow.State);
+            yield return Tap(pad.leftShoulder);
+            Assert.AreEqual(FlowState.Characters, flow.State);
+            yield return TestUtil.Capture("M1_characters");
+            yield return Tap(pad.leftShoulder);
+            Assert.AreEqual(FlowState.Characters, flow.State, "stops at the left edge");
+            yield return Tap(pad.rightShoulder);
+            yield return Tap(pad.rightShoulder);
+            yield return Tap(pad.rightShoulder);
+            Assert.AreEqual(FlowState.Codex, flow.State);
+            yield return Tap(pad.rightShoulder);
+            Assert.AreEqual(FlowState.Cosmetics, flow.State);
+            yield return Tap(pad.buttonEast);
+            Assert.AreEqual(FlowState.MatchSelect, flow.State, "B goes back Home");
+            yield return Tap(pad.buttonEast);
+            Assert.AreEqual(FlowState.Title, flow.State, "B from Home goes to the splash");
+            Assert.IsFalse(flow.HubBar.Visible);
+        }
+
+        [UnityTest]
         public IEnumerator Hero_MovesWithTheLeftStick()
         {
             yield return Boot();

@@ -15,14 +15,16 @@ Design doc: [Docs/GAME_PLAN.md](Docs/GAME_PLAN.md).
 | ![Title](Docs/Screens/M1_title.png) | ![Evolution card](Docs/Screens/M2_evolve_card.png) |
 | ![Candy Realm](Docs/Screens/M6_biome_candy.png) | ![Fixed arena](Docs/Screens/M4_fixed_arena.png) |
 | ![Skill tree](Docs/Screens/M5_skill_tree.png) | ![Codex](Docs/Screens/M7_codex_evolutions.png) |
-| ![Match select](Docs/Screens/M1_match_select.png) | ![Frozen Tundra](Docs/Screens/M6_biome_frozen.png) |
+| ![Home](Docs/Screens/M1_home.png) | ![Frozen Tundra](Docs/Screens/M6_biome_frozen.png) |
 
 ## Getting started
 
 1. Open the project folder in Unity 6000.3.25f1. The scene `Assets/_Project/Scenes/MiniMayhem.unity` opens
    automatically (or use **Mini Mayhem > Open Game Scene**).
 2. Plug in an Xbox controller (keyboard and mouse work too) and press Play.
-3. **Play** -> pick a match -> pick your starting weapon.
+3. **Play** opens **Home**, where you plan and pick a match, then your starting weapon. LB / RB slide to the
+   other pages: Characters, Skill Tree, Home, Codex, Cosmetics (Characters and Cosmetics are placeholders for
+   the next phase).
 
 A Windows build: **Mini Mayhem > Build Windows Player** (or `./Tools/unity.ps1 player`) writes `Builds/Windows/MiniMayhem.exe`.
 
@@ -34,7 +36,8 @@ A Windows build: **Mini Mayhem > Build Windows Player** (or `./Tools/unity.ps1 p
 | Menus: move / select / back | Stick or D-pad / A / B | Arrows / Enter or Space / Esc |
 | Level-up: pick / reroll / banish / skip | A / Y / X / B | Enter / R / X / Backspace |
 | Pause | Start | Esc |
-| Codex tabs | LB / RB | Q / E |
+| Hub pages (Characters, Skill Tree, Home, Codex, Cosmetics) | LB / RB | Q / E |
+| Codex tabs | LT / RT | Z / C |
 | Skill tree: buy / respec / zoom / pan | A / Y / LT RT / right stick | Enter / R / mouse wheel |
 | FPS and entity counter | View | F3 |
 
@@ -71,6 +74,8 @@ The mouse works on every menu (hover focuses, click selects). The focused button
   speed, duration) and Fortune (gold, luck, Reroll, Skip, Banish, a 4th card). Full respec at any time.
 - **Codex:** Weapons, Items, Evolutions, Fusions, Enemies, Biomes and Stats, generated from the same data the game
   uses. Entries stay "???" until discovered; recipe requirements show as soon as you know the base weapon.
+- **Background decor** (trees, bushes, flowers, rocks) is flat and outline-free, blended into the ground;
+  anything that matters (enemies, pickups, crates and walls you collide with) keeps a thick ink outline.
 - **Settings:** volumes, damage numbers, screen shake, colour-blind enemy shots, controller rumble, fullscreen,
   resolution, FPS counter, reset progress.
 
@@ -94,7 +99,7 @@ data with the values in `Assets/_Project/Editor/*Data.cs`.
 
 ## Tests
 
-12 EditMode tests (data rules, skill tree, unlocks, saves) and 37 PlayMode tests that drive the real game through
+12 EditMode tests (data rules, skill tree, unlocks, saves) and 38 PlayMode tests that drive the real game through
 a virtual gamepad, one file per milestone (`M1_` ... `M8_`). Run them from **Window > General > Test Runner**, or:
 
 ```bash

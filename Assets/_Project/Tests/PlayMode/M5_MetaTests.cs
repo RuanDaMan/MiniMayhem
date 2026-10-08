@@ -35,7 +35,7 @@ namespace MiniMayhem.Tests
             Assert.AreEqual(0, meta.Rank(core));
             Assert.Greater(spent, 0);
             yield return Tap(pad.buttonEast);
-            Assert.AreEqual(FlowState.Title, flow.State);
+            Assert.AreEqual(FlowState.MatchSelect, flow.State, "B returns Home");
         }
 
         [UnityTest]
