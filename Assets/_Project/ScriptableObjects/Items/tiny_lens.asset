@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b34bd16412b8bc4082d15a851081f46, type: 3}
+  m_Name: tiny_lens
+  m_EditorClassIdentifier: MiniMayhem.Runtime::MiniMayhem.ItemDefinition
+  id: tiny_lens
+  displayName: Tiny Lens
+  description: 'Focused power: damage and area. Evolves the Laser Pointer.'
+  icon: 83
+  color: {r: 0.6117647, g: 0.84313726, b: 1, a: 1}
+  general: 0
+  levels:
+  - mods:
+    - stat: 4
+      value: 0.04
+    - stat: 6
+      value: 0.04
+  - mods:
+    - stat: 4
+      value: 0.04
+    - stat: 6
+      value: 0.04
+  - mods:
+    - stat: 4
+      value: 0.04
+    - stat: 6
+      value: 0.04
+  - mods:
+    - stat: 4
+      value: 0.04
+    - stat: 6
+      value: 0.04
+  - mods:
+    - stat: 4
+      value: 0.04
+    - stat: 6
+      value: 0.04

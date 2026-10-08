@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fc09b0e8b8cfba4a8a4d020ab3479a1, type: 3}
+  m_Name: water_balloon
+  m_EditorClassIdentifier: MiniMayhem.Runtime::MiniMayhem.WeaponDefinition
+  id: water_balloon
+  displayName: Water Balloon
+  description: Lobbed in an arc; the splash leaves a puddle that slows enemies.
+  archetype: 5
+  targeting: 1
+  tags: 132
+  form: 0
+  startsUnlocked: 0
+  unlockBiome: 1
+  icon: 49
+  projectileArt: 18
+  color: {r: 0.30980393, g: 0.7137255, b: 1, a: 1}
+  colorMax: {r: 0.18039216, g: 0.41960785, b: 1, a: 1}
+  levels:
+  - damage: 12
+    cooldown: 2
+    amount: 1
+    area: 1
+    speed: 0
+    duration: 2.5
+    pierce: 0
+    knockback: 0.5
+    note: 
+  - damage: 16
+    cooldown: 2
+    amount: 1
+    area: 1
+    speed: 0
+    duration: 2.5
+    pierce: 0
+    knockback: 0.5
+    note: +33% damage.
+  - damage: 16
+    cooldown: 2
+    amount: 2
+    area: 1
+    speed: 0
+    duration: 2.5
+    pierce: 0
+    knockback: 0.5
+    note: +1 balloon.
+  - damage: 16
+    cooldown: 1.8
+    amount: 2
+    area: 1.3
+    speed: 0
+    duration: 2.5
+    pierce: 0
+    knockback: 0.6
+    note: Bigger splash.
+  - damage: 22
+    cooldown: 1.8
+    amount: 2
+    area: 1.35
+    speed: 0
+    duration: 4
+    pierce: 0
+    knockback: 0.7
+    note: 'Big spike: puddles last much longer.'
+  behaviour:
+    range: 8.5
+    homing: 0
+    explodeRadius: 0
+    bounces: 0
+    chains: 0
+    arcDegrees: 150
+    tickInterval: 0.5
+    hitCooldown: 0.5
+    slow: 0.4
+    poisonDps: 0
+    orbiters: 0
+    subBlasts: 0
+    spread: 12
+    followsPlayer: 0
+    launchEnemies: 0
+    alwaysOn: 0
+    shockwave: 0
+    pulses: 0
+    stormStrikes: 0
+    colorCycle: 0

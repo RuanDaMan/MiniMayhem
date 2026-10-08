@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8a6c9d1f83dfa34a8d47045ddae800c, type: 3}
+  m_Name: frog
+  m_EditorClassIdentifier: MiniMayhem.Runtime::MiniMayhem.EnemyDefinition
+  id: frog
+  displayName: Frog Hopper
+  description: Moves in big, hard-to-read hops.
+  tier: 0
+  behaviour: 10
+  maxHp: 12
+  damage: 8
+  speed: 2.1
+  radius: 0.42
+  armor: 0
+  knockbackResist: 0
+  xp: 1
+  goldChance: 0.08
+  attackInterval: 2.5
+  attackRange: 6
+  projectileSpeed: 6
+  projectileCount: 1
+  child: {fileID: 0}
+  childCount: 2
+  patterns: 
+  body: 1
+  features: 65537
+  primary: {r: 0.37254903, g: 0.76862746, b: 0.3529412, a: 1}
+  secondary: {r: 0.7764706, g: 0.9490196, b: 0.3529412, a: 1}
+  accent: {r: 0.18039216, g: 0.5411765, b: 0.11764706, a: 1}
+  visualScale: 1.35

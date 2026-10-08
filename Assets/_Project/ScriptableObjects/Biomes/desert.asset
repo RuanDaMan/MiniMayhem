@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63ee4676b7603404a890b44ee2c8bc80, type: 3}
+  m_Name: desert
+  m_EditorClassIdentifier: MiniMayhem.Runtime::MiniMayhem.BiomeDefinition
+  id: desert
+  displayName: Desert
+  description: Hot sand, prickly cacti and sudden sandstorms that hide what is coming.
+  index: 2
+  difficulty: 2.4
+  normals:
+  - {fileID: 11400000, guid: 4a0c1f870e968b84aa5f196052ebc6b4, type: 2}
+  - {fileID: 11400000, guid: 191803f821f9c0e4f901d49b752e6f15, type: 2}
+  - {fileID: 11400000, guid: 993cda687ba710a4c851fd0b335d6615, type: 2}
+  - {fileID: 11400000, guid: 95ff3bdfd81c5e644b0743f8b43409b1, type: 2}
+  - {fileID: 11400000, guid: 352b672d0fb54514f85b5c6b9cf6b70c, type: 2}
+  - {fileID: 11400000, guid: 6dab4c5a06535654986b436518853dc9, type: 2}
+  miniBosses:
+  - {fileID: 11400000, guid: b515627725c4f4046a4a5c4e912089ad, type: 2}
+  - {fileID: 11400000, guid: 931bd55dddf873e48a4c2dce48b9fee9, type: 2}
+  boss: {fileID: 11400000, guid: 90611bc9a46c8c24b9613ff099a21a6b, type: 2}
+  waves: {fileID: 11400000, guid: cf43cf04832b0aa43bcd87a5c393b855, type: 2}
+  matchStyles: 000000000100000000000000
+  killTarget: 700
+  groundA: {r: 0.9411765, g: 0.8156863, b: 0.5411765, a: 1}
+  groundB: {r: 0.9019608, g: 0.7607843, b: 0.47843137, a: 1}
+  wallColor: {r: 0.76862746, g: 0.5411765, b: 0.32156864, a: 1}
+  props: 61000000620000005d0000006d00000061000000
+  propTints:
+  - {r: 0.37254903, g: 0.68235296, b: 0.27058825, a: 1}
+  - {r: 1, g: 0.94509804, b: 0.8392157, a: 1}
+  - {r: 0.7882353, g: 0.6392157, b: 0.41568628, a: 1}
+  - {r: 1, g: 0.94509804, b: 0.8392157, a: 1}
+  - {r: 0.30588236, g: 0.6039216, b: 0.22745098, a: 1}
+  propDensity: 3
+  hazard: 2
+  hazardColor: {r: 0, g: 0, b: 0, a: 0}
+  hazardDensity: 0.7
+  musicRoot: 62
+  musicMinor: 1
+  musicTempo: 124
+  musicSeed: 37

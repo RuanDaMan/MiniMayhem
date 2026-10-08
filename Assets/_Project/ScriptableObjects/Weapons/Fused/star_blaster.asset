@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fc09b0e8b8cfba4a8a4d020ab3479a1, type: 3}
+  m_Name: star_blaster
+  m_EditorClassIdentifier: MiniMayhem.Runtime::MiniMayhem.WeaponDefinition
+  id: star_blaster
+  displayName: Star Blaster
+  description: Bursts of homing stars that pierce through crowds.
+  archetype: 0
+  targeting: 0
+  tags: 48
+  form: 2
+  startsUnlocked: 0
+  unlockBiome: -1
+  icon: 68
+  projectileArt: 16
+  color: {r: 1, g: 0.88235295, b: 0.3019608, a: 1}
+  colorMax: {r: 1, g: 0.88235295, b: 0.3019608, a: 1}
+  levels:
+  - damage: 30
+    cooldown: 0.7
+    amount: 5
+    area: 1.25
+    speed: 12
+    duration: 2
+    pierce: 3
+    knockback: 0.6
+    note: 
+  behaviour:
+    range: 11
+    homing: 6
+    explodeRadius: 0
+    bounces: 0
+    chains: 0
+    arcDegrees: 150
+    tickInterval: 0.5
+    hitCooldown: 0.5
+    slow: 0
+    poisonDps: 0
+    orbiters: 0
+    subBlasts: 0
+    spread: 14
+    followsPlayer: 0
+    launchEnemies: 0
+    alwaysOn: 0
+    shockwave: 0
+    pulses: 0
+    stormStrikes: 0
+    colorCycle: 0

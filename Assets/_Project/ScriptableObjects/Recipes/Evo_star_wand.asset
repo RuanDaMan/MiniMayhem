@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd6b1ebe5689a914aa6d41064132d3f4, type: 3}
+  m_Name: Evo_star_wand
+  m_EditorClassIdentifier: MiniMayhem.Runtime::MiniMayhem.EvolutionRecipe
+  weapon: {fileID: 11400000, guid: d4bb35dec5831f3488c07bb046296545, type: 2}
+  item: {fileID: 11400000, guid: f5d7fac052a1d6044ae77bd773c2f2e2, type: 2}
+  result: {fileID: 11400000, guid: c7a7045940d7a374fb757d55a0455e5d, type: 2}

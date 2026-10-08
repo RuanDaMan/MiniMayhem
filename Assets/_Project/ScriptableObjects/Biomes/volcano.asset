@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63ee4676b7603404a890b44ee2c8bc80, type: 3}
+  m_Name: volcano
+  m_EditorClassIdentifier: MiniMayhem.Runtime::MiniMayhem.BiomeDefinition
+  id: volcano
+  displayName: Volcano
+  description: Scorching rock and bubbling lava pools that burn to stand in.
+  index: 4
+  difficulty: 4.6
+  normals:
+  - {fileID: 11400000, guid: 173e1b6fe173fca4e8b11137de28c274, type: 2}
+  - {fileID: 11400000, guid: 16d817507344382439f7b014925e1efa, type: 2}
+  - {fileID: 11400000, guid: 4fb7c3f5c0e19b64880b15112c9a9047, type: 2}
+  - {fileID: 11400000, guid: de4a6b7803cfc25438f937c03ef0fcef, type: 2}
+  - {fileID: 11400000, guid: 473bd595ccb36ce45820b3b2c2dc038a, type: 2}
+  - {fileID: 11400000, guid: d32e97df580c7b240b8f60d98d138f27, type: 2}
+  miniBosses:
+  - {fileID: 11400000, guid: 16e2bef6c05394642b86822aae655685, type: 2}
+  - {fileID: 11400000, guid: 779e53c25556fc249b24e7962f02411c, type: 2}
+  boss: {fileID: 11400000, guid: 66e26e58dba3c6640ab5662b35348d44, type: 2}
+  waves: {fileID: 11400000, guid: 662bdc3383f362640b62783804c56add, type: 2}
+  matchStyles: 000000000200000000000000
+  killTarget: 900
+  groundA: {r: 0.3529412, g: 0.22745098, b: 0.22745098, a: 1}
+  groundB: {r: 0.3019608, g: 0.1882353, b: 0.1882353, a: 1}
+  wallColor: {r: 0.18039216, g: 0.11764706, b: 0.11764706, a: 1}
+  props: 66000000670000006d000000620000005d000000
+  propTints:
+  - {r: 0.22745098, g: 0.16470589, b: 0.16470589, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 0.84705883, g: 0.78431374, b: 0.6901961, a: 1}
+  - {r: 0.84705883, g: 0.78431374, b: 0.6901961, a: 1}
+  - {r: 0.41568628, g: 0.2901961, b: 0.2901961, a: 1}
+  propDensity: 3
+  hazard: 4
+  hazardColor: {r: 1, g: 0.4509804, b: 0.09803922, a: 0.8509804}
+  hazardDensity: 0.45
+  musicRoot: 55
+  musicMinor: 1
+  musicTempo: 136
+  musicSeed: 53

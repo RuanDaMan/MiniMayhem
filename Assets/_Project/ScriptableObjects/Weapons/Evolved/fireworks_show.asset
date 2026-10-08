@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fc09b0e8b8cfba4a8a4d020ab3479a1, type: 3}
+  m_Name: fireworks_show
+  m_EditorClassIdentifier: MiniMayhem.Runtime::MiniMayhem.WeaponDefinition
+  id: fireworks_show
+  displayName: Fireworks Show
+  description: Every blast sets off a chain of colourful explosions.
+  archetype: 8
+  targeting: 4
+  tags: 2178
+  form: 1
+  startsUnlocked: 0
+  unlockBiome: -1
+  icon: 66
+  projectileArt: 24
+  color: {r: 1, g: 0.56078434, b: 0.78039217, a: 1}
+  colorMax: {r: 1, g: 0.56078434, b: 0.78039217, a: 1}
+  levels:
+  - damage: 50
+    cooldown: 1.5
+    amount: 8
+    area: 1.4
+    speed: 0
+    duration: 12
+    pierce: 0
+    knockback: 2.5
+    note: 
+  behaviour:
+    range: 4
+    homing: 0
+    explodeRadius: 0
+    bounces: 0
+    chains: 0
+    arcDegrees: 150
+    tickInterval: 0.5
+    hitCooldown: 0.5
+    slow: 0
+    poisonDps: 0
+    orbiters: 0
+    subBlasts: 3
+    spread: 12
+    followsPlayer: 0
+    launchEnemies: 0
+    alwaysOn: 0
+    shockwave: 0
+    pulses: 0
+    stormStrikes: 0
+    colorCycle: 0

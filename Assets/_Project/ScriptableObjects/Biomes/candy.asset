@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63ee4676b7603404a890b44ee2c8bc80, type: 3}
+  m_Name: candy
+  m_EditorClassIdentifier: MiniMayhem.Runtime::MiniMayhem.BiomeDefinition
+  id: candy
+  displayName: Candy Realm
+  description: A sugary dream with a sticky twist. The finale biome.
+  index: 5
+  difficulty: 6
+  normals:
+  - {fileID: 11400000, guid: 7b315c10eb97da744b846962cd4fb0eb, type: 2}
+  - {fileID: 11400000, guid: 5cb94543e94297e40a86081dbda61aae, type: 2}
+  - {fileID: 11400000, guid: 48cad97ca7006154fb9aa9eb26fb2f5a, type: 2}
+  - {fileID: 11400000, guid: bcc3161546d49524a858ed9e81c7856d, type: 2}
+  - {fileID: 11400000, guid: dffc2244b05767447b85be2ed56c8272, type: 2}
+  - {fileID: 11400000, guid: b03b6ce97f3ee3643a67adaddc71001f, type: 2}
+  miniBosses:
+  - {fileID: 11400000, guid: 2094940fa73857d48bf5d931d539dd0e, type: 2}
+  - {fileID: 11400000, guid: f4fc88ad107712642b1eb8558a3922ef, type: 2}
+  boss: {fileID: 11400000, guid: b6a9ed91916016f43a6195e878e8f4e4, type: 2}
+  waves: {fileID: 11400000, guid: aeb1196ba0c34c049873f57ec03d12e5, type: 2}
+  matchStyles: 020000000000000002000000
+  killTarget: 1000
+  groundA: {r: 1, g: 0.78431374, b: 0.9019608, a: 1}
+  groundB: {r: 1, g: 0.72156864, b: 0.8627451, a: 1}
+  wallColor: {r: 1, g: 0.56078434, b: 0.78039217, a: 1}
+  props: 68000000690000006a0000006a0000006c000000
+  propTints:
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 0.94509804, b: 0.8392157, a: 1}
+  - {r: 0.49803922, g: 0.8784314, b: 1, a: 1}
+  - {r: 1, g: 0.8235294, b: 0.24705882, a: 1}
+  - {r: 1, g: 0.6039216, b: 0.8745098, a: 1}
+  propDensity: 3
+  hazard: 5
+  hazardColor: {r: 1, g: 0.9490196, b: 0.8, a: 0.8156863}
+  hazardDensity: 0.7
+  musicRoot: 65
+  musicMinor: 0
+  musicTempo: 140
+  musicSeed: 67

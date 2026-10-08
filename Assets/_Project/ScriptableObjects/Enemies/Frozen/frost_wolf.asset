@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8a6c9d1f83dfa34a8d47045ddae800c, type: 3}
+  m_Name: frost_wolf
+  m_EditorClassIdentifier: MiniMayhem.Runtime::MiniMayhem.EnemyDefinition
+  id: frost_wolf
+  displayName: Frost Wolf
+  description: Hunts in fast packs.
+  tier: 0
+  behaviour: 6
+  maxHp: 14
+  damage: 9
+  speed: 3.4
+  radius: 0.4
+  armor: 0
+  knockbackResist: 0
+  xp: 1
+  goldChance: 0.06
+  attackInterval: 2.5
+  attackRange: 6
+  projectileSpeed: 6
+  projectileCount: 1
+  child: {fileID: 0}
+  childCount: 2
+  patterns: 
+  body: 1
+  features: 2561
+  primary: {r: 0.65882355, g: 0.72156864, b: 0.8156863, a: 1}
+  secondary: {r: 0.9098039, g: 0.9411765, b: 1, a: 1}
+  accent: {r: 0.22745098, g: 0.2901961, b: 0.41568628, a: 1}
+  visualScale: 1.35

@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8a6c9d1f83dfa34a8d47045ddae800c, type: 3}
+  m_Name: sand_golem
+  m_EditorClassIdentifier: MiniMayhem.Runtime::MiniMayhem.EnemyDefinition
+  id: sand_golem
+  displayName: Sand Golem
+  description: Slams the ground and calls mummies.
+  tier: 1
+  behaviour: 13
+  maxHp: 900
+  damage: 22
+  speed: 1.6
+  radius: 1.1
+  armor: 0
+  knockbackResist: 0.8
+  xp: 60
+  goldChance: 1
+  attackInterval: 2.5
+  attackRange: 6
+  projectileSpeed: 6
+  projectileCount: 1
+  child: {fileID: 11400000, guid: 352b672d0fb54514f85b5c6b9cf6b70c, type: 2}
+  childCount: 4
+  patterns: 040000000200000003000000
+  body: 6
+  features: 131073
+  primary: {r: 0.84705883, g: 0.6901961, b: 0.3764706, a: 1}
+  secondary: {r: 0.9411765, g: 0.84705883, b: 0.65882355, a: 1}
+  accent: {r: 0.3529412, g: 0.22745098, b: 0.101960786, a: 1}
+  visualScale: 1.3

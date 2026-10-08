@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63ee4676b7603404a890b44ee2c8bc80, type: 3}
+  m_Name: meadow
+  m_EditorClassIdentifier: MiniMayhem.Runtime::MiniMayhem.BiomeDefinition
+  id: meadow
+  displayName: Meadow
+  description: Sunny fields full of flowers, bugs and slimes. A gentle start.
+  index: 0
+  difficulty: 1
+  normals:
+  - {fileID: 11400000, guid: 3602f296480a3f84cbb76ba866247544, type: 2}
+  - {fileID: 11400000, guid: 3ab742f3c945fb540a9ed9fa3bb7e9e4, type: 2}
+  - {fileID: 11400000, guid: dfa8b7c7fcb97aa4d83829538263b944, type: 2}
+  - {fileID: 11400000, guid: 3d19dcd2be71c704fa35993539a79ec1, type: 2}
+  - {fileID: 11400000, guid: 325b4fc5c599bfe4184c3ad8af03e7a2, type: 2}
+  - {fileID: 11400000, guid: c6d7754eb14867a468e07724e973a9d5, type: 2}
+  miniBosses:
+  - {fileID: 11400000, guid: 66ddd4e88ad55f44ca51f808ee2912f8, type: 2}
+  - {fileID: 11400000, guid: d250c0b818a0d4748803f82c153c4301, type: 2}
+  boss: {fileID: 11400000, guid: 75adb06d7901bc74cb6f295615707ddb, type: 2}
+  waves: {fileID: 11400000, guid: f38664761036f584b84934e97b82a387, type: 2}
+  matchStyles: 000000000100000000000000
+  killTarget: 500
+  groundA: {r: 0.5568628, g: 0.81960785, b: 0.41960785, a: 1}
+  groundB: {r: 0.49803922, g: 0.76862746, b: 0.36862746, a: 1}
+  wallColor: {r: 0.54509807, g: 0.41960785, b: 0.2901961, a: 1}
+  props: 5b0000005b0000005c0000006b0000006c0000005d0000005e000000
+  propTints:
+  - {r: 1, g: 0.56078434, b: 0.78039217, a: 1}
+  - {r: 1, g: 0.94509804, b: 0.65882355, a: 1}
+  - {r: 0.37254903, g: 0.68235296, b: 0.27058825, a: 1}
+  - {r: 0.37254903, g: 0.68235296, b: 0.27058825, a: 1}
+  - {r: 0.30588236, g: 0.6039216, b: 0.22745098, a: 1}
+  - {r: 0.72156864, g: 0.74509805, b: 0.78431374, a: 1}
+  - {r: 1, g: 0.41960785, b: 0.35686275, a: 1}
+  propDensity: 3
+  hazard: 0
+  hazardColor: {r: 0, g: 0, b: 0, a: 0}
+  hazardDensity: 0.7
+  musicRoot: 60
+  musicMinor: 0
+  musicTempo: 128
+  musicSeed: 11

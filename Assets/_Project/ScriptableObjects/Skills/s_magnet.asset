@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ab62ca204b12b443ab2e27b4cc35b1f, type: 3}
+  m_Name: s_magnet
+  m_EditorClassIdentifier: MiniMayhem.Runtime::MiniMayhem.SkillNodeDefinition
+  id: s_magnet
+  displayName: Sticky Fingers
+  description: Bigger pickup radius.
+  branch: 3
+  position: {x: -0.9, y: -2.1}
+  maxRank: 5
+  baseCost: 50
+  costGrowth: 1.5
+  prerequisites:
+  - {fileID: 11400000, guid: 9065b1d34589b4a48b525153a2a79853, type: 2}
+  perRank:
+    stat: 10
+    value: 0.3

@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8a6c9d1f83dfa34a8d47045ddae800c, type: 3}
+  m_Name: cobra
+  m_EditorClassIdentifier: MiniMayhem.Runtime::MiniMayhem.EnemyDefinition
+  id: cobra
+  displayName: Cobra
+  description: Hypnotic spirals of venom.
+  tier: 1
+  behaviour: 13
+  maxHp: 800
+  damage: 18
+  speed: 2.2
+  radius: 0.95
+  armor: 0
+  knockbackResist: 0.8
+  xp: 60
+  goldChance: 1
+  attackInterval: 2.5
+  attackRange: 6
+  projectileSpeed: 6
+  projectileCount: 1
+  child: {fileID: 11400000, guid: 95ff3bdfd81c5e644b0743f8b43409b1, type: 2}
+  childCount: 10
+  patterns: 010000000500000002000000
+  body: 5
+  features: 3073
+  primary: {r: 0.7529412, g: 0.627451, b: 0.1882353, a: 1}
+  secondary: {r: 0.9411765, g: 0.8784314, b: 0.5019608, a: 1}
+  accent: {r: 0.3529412, g: 0.22745098, b: 0.101960786, a: 1}
+  visualScale: 1.3

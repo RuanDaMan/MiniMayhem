@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8a6c9d1f83dfa34a8d47045ddae800c, type: 3}
+  m_Name: frost_mammoth
+  m_EditorClassIdentifier: MiniMayhem.Runtime::MiniMayhem.EnemyDefinition
+  id: frost_mammoth
+  displayName: Frost Mammoth
+  description: An ancient woolly giant that shakes the ice.
+  tier: 2
+  behaviour: 13
+  maxHp: 6800
+  damage: 30
+  speed: 1.3
+  radius: 1.9
+  armor: 0
+  knockbackResist: 0.95
+  xp: 260
+  goldChance: 1
+  attackInterval: 2.5
+  attackRange: 6
+  projectileSpeed: 5.5
+  projectileCount: 1
+  child: {fileID: 11400000, guid: eb6f44659edc7294d88d0a9251a4f532, type: 2}
+  childCount: 10
+  patterns: 02000000040000000000000003000000
+  body: 1
+  features: 641
+  primary: {r: 0.6039216, g: 0.47843137, b: 0.41568628, a: 1}
+  secondary: {r: 0.9098039, g: 0.8627451, b: 0.7529412, a: 1}
+  accent: {r: 1, g: 1, b: 1, a: 1}
+  visualScale: 1.25

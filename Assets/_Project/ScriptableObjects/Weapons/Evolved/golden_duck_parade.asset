@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fc09b0e8b8cfba4a8a4d020ab3479a1, type: 3}
+  m_Name: golden_duck_parade
+  m_EditorClassIdentifier: MiniMayhem.Runtime::MiniMayhem.WeaponDefinition
+  id: golden_duck_parade
+  displayName: Golden Duck Parade
+  description: Six golden ducks race around you and burst outward.
+  archetype: 3
+  targeting: 4
+  tags: 5
+  form: 1
+  startsUnlocked: 0
+  unlockBiome: -1
+  icon: 59
+  projectileArt: 21
+  color: {r: 1, g: 0.7607843, b: 0.101960786, a: 1}
+  colorMax: {r: 1, g: 0.7607843, b: 0.101960786, a: 1}
+  levels:
+  - damage: 24
+    cooldown: 3
+    amount: 6
+    area: 1.5
+    speed: 5
+    duration: 0
+    pierce: 0
+    knockback: 1.6
+    note: 
+  behaviour:
+    range: 4
+    homing: 0
+    explodeRadius: 0
+    bounces: 0
+    chains: 0
+    arcDegrees: 150
+    tickInterval: 0.5
+    hitCooldown: 0.4
+    slow: 0
+    poisonDps: 0
+    orbiters: 0
+    subBlasts: 0
+    spread: 12
+    followsPlayer: 0
+    launchEnemies: 0
+    alwaysOn: 0
+    shockwave: 0
+    pulses: 1
+    stormStrikes: 0
+    colorCycle: 0

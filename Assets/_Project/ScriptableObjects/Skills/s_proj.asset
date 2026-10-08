@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ab62ca204b12b443ab2e27b4cc35b1f, type: 3}
+  m_Name: s_proj
+  m_EditorClassIdentifier: MiniMayhem.Runtime::MiniMayhem.SkillNodeDefinition
+  id: s_proj
+  displayName: Strong Arm
+  description: Faster projectiles and orbits.
+  branch: 3
+  position: {x: 0, y: -3.1}
+  maxRank: 5
+  baseCost: 80
+  costGrowth: 1.5
+  prerequisites:
+  - {fileID: 11400000, guid: 58367fd9f47b45c4fb47a2df94793c2f, type: 2}
+  - {fileID: 11400000, guid: cf4184768657e9b4c8287616ffcab953, type: 2}
+  perRank:
+    stat: 7
+    value: 0.06

@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fc09b0e8b8cfba4a8a4d020ab3479a1, type: 3}
+  m_Name: pea_shooter
+  m_EditorClassIdentifier: MiniMayhem.Runtime::MiniMayhem.WeaponDefinition
+  id: pea_shooter
+  displayName: Pea Shooter
+  description: Fires peas at the nearest enemy.
+  archetype: 0
+  targeting: 0
+  tags: 33
+  form: 0
+  startsUnlocked: 1
+  unlockBiome: -1
+  icon: 44
+  projectileArt: 12
+  color: {r: 0.48235294, g: 0.8509804, b: 0.29411766, a: 1}
+  colorMax: {r: 0.18039216, g: 0.9019608, b: 0.627451, a: 1}
+  levels:
+  - damage: 10
+    cooldown: 0.9
+    amount: 1
+    area: 1
+    speed: 12
+    duration: 1
+    pierce: 0
+    knockback: 0.5
+    note: 
+  - damage: 14
+    cooldown: 0.9
+    amount: 1
+    area: 1
+    speed: 12
+    duration: 1
+    pierce: 0
+    knockback: 0.5
+    note: +40% damage.
+  - damage: 14
+    cooldown: 0.9
+    amount: 2
+    area: 1
+    speed: 12
+    duration: 1
+    pierce: 0
+    knockback: 0.5
+    note: +1 pea.
+  - damage: 14
+    cooldown: 0.7
+    amount: 2
+    area: 1
+    speed: 13
+    duration: 1
+    pierce: 0
+    knockback: 0.5
+    note: Fires faster.
+  - damage: 22
+    cooldown: 0.7
+    amount: 3
+    area: 1.15
+    speed: 14
+    duration: 1
+    pierce: 1
+    knockback: 0.7
+    note: 'Big spike: +1 pea, bigger, pierces 1.'
+  behaviour:
+    range: 9
+    homing: 0
+    explodeRadius: 0
+    bounces: 0
+    chains: 0
+    arcDegrees: 150
+    tickInterval: 0.5
+    hitCooldown: 0.5
+    slow: 0
+    poisonDps: 0
+    orbiters: 0
+    subBlasts: 0
+    spread: 10
+    followsPlayer: 0
+    launchEnemies: 0
+    alwaysOn: 0
+    shockwave: 0
+    pulses: 0
+    stormStrikes: 0
+    colorCycle: 0

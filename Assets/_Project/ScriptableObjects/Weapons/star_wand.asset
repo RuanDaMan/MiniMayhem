@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fc09b0e8b8cfba4a8a4d020ab3479a1, type: 3}
+  m_Name: star_wand
+  m_EditorClassIdentifier: MiniMayhem.Runtime::MiniMayhem.WeaponDefinition
+  id: star_wand
+  displayName: Star Wand
+  description: Shoots homing stars at enemies.
+  archetype: 0
+  targeting: 0
+  tags: 48
+  form: 0
+  startsUnlocked: 1
+  unlockBiome: -1
+  icon: 50
+  projectileArt: 16
+  color: {r: 1, g: 0.8235294, b: 0.24705882, a: 1}
+  colorMax: {r: 1, g: 0.56078434, b: 0.78039217, a: 1}
+  levels:
+  - damage: 9
+    cooldown: 1
+    amount: 1
+    area: 1
+    speed: 9
+    duration: 2
+    pierce: 0
+    knockback: 0.3
+    note: 
+  - damage: 12
+    cooldown: 1
+    amount: 1
+    area: 1
+    speed: 9
+    duration: 2
+    pierce: 0
+    knockback: 0.3
+    note: +33% damage.
+  - damage: 12
+    cooldown: 1
+    amount: 2
+    area: 1
+    speed: 9
+    duration: 2
+    pierce: 0
+    knockback: 0.3
+    note: +1 star.
+  - damage: 12
+    cooldown: 0.8
+    amount: 2
+    area: 1
+    speed: 10
+    duration: 2
+    pierce: 0
+    knockback: 0.3
+    note: Casts faster.
+  - damage: 16
+    cooldown: 0.8
+    amount: 3
+    area: 1.15
+    speed: 10
+    duration: 2
+    pierce: 0
+    knockback: 0.4
+    note: 'Big spike: +1 star.'
+  behaviour:
+    range: 10
+    homing: 6
+    explodeRadius: 0
+    bounces: 0
+    chains: 0
+    arcDegrees: 150
+    tickInterval: 0.5
+    hitCooldown: 0.5
+    slow: 0
+    poisonDps: 0
+    orbiters: 0
+    subBlasts: 0
+    spread: 25
+    followsPlayer: 0
+    launchEnemies: 0
+    alwaysOn: 0
+    shockwave: 0
+    pulses: 0
+    stormStrikes: 0
+    colorCycle: 0

@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fc09b0e8b8cfba4a8a4d020ab3479a1, type: 3}
+  m_Name: cast_iron_slam
+  m_EditorClassIdentifier: MiniMayhem.Runtime::MiniMayhem.WeaponDefinition
+  id: cast_iron_slam
+  displayName: Cast Iron Slam
+  description: Front and back slams that send out a shockwave ring.
+  archetype: 2
+  targeting: 0
+  tags: 193
+  form: 1
+  startsUnlocked: 0
+  unlockBiome: -1
+  icon: 58
+  projectileArt: 34
+  color: {r: 1, g: 0.7019608, b: 0.2784314, a: 1}
+  colorMax: {r: 1, g: 0.7019608, b: 0.2784314, a: 1}
+  levels:
+  - damage: 60
+    cooldown: 1
+    amount: 2
+    area: 1.5
+    speed: 0
+    duration: 0
+    pierce: 0
+    knockback: 3
+    note: 
+  behaviour:
+    range: 4.5
+    homing: 0
+    explodeRadius: 3
+    bounces: 0
+    chains: 0
+    arcDegrees: 170
+    tickInterval: 0.5
+    hitCooldown: 0.5
+    slow: 0
+    poisonDps: 0
+    orbiters: 0
+    subBlasts: 0
+    spread: 12
+    followsPlayer: 0
+    launchEnemies: 0
+    alwaysOn: 0
+    shockwave: 1
+    pulses: 0
+    stormStrikes: 0
+    colorCycle: 0

@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fc09b0e8b8cfba4a8a4d020ab3479a1, type: 3}
+  m_Name: zap_rod
+  m_EditorClassIdentifier: MiniMayhem.Runtime::MiniMayhem.WeaponDefinition
+  id: zap_rod
+  displayName: Zap Rod
+  description: Chain lightning jumps between nearby enemies.
+  archetype: 4
+  targeting: 1
+  tags: 24
+  form: 0
+  startsUnlocked: 0
+  unlockBiome: 0
+  icon: 48
+  projectileArt: 43
+  color: {r: 0.65882355, g: 0.54509807, b: 1, a: 1}
+  colorMax: {r: 0.49803922, g: 0.9529412, b: 1, a: 1}
+  levels:
+  - damage: 16
+    cooldown: 1.4
+    amount: 1
+    area: 1
+    speed: 0
+    duration: 0
+    pierce: 0
+    knockback: 0.3
+    note: 
+  - damage: 20
+    cooldown: 1.4
+    amount: 1
+    area: 1
+    speed: 0
+    duration: 0
+    pierce: 0
+    knockback: 0.3
+    note: +25% damage.
+  - damage: 20
+    cooldown: 1.4
+    amount: 1
+    area: 1
+    speed: 0
+    duration: 0
+    pierce: 1
+    knockback: 0.3
+    note: +1 chain.
+  - damage: 20
+    cooldown: 1.1
+    amount: 1
+    area: 1
+    speed: 0
+    duration: 0
+    pierce: 1
+    knockback: 0.3
+    note: Zaps more often.
+  - damage: 28
+    cooldown: 1.1
+    amount: 2
+    area: 1.1
+    speed: 0
+    duration: 0
+    pierce: 1
+    knockback: 0.4
+    note: 'Big spike: two bolts at once.'
+  behaviour:
+    range: 7.5
+    homing: 0
+    explodeRadius: 0
+    bounces: 0
+    chains: 2
+    arcDegrees: 150
+    tickInterval: 0.5
+    hitCooldown: 0.5
+    slow: 0
+    poisonDps: 0
+    orbiters: 0
+    subBlasts: 0
+    spread: 12
+    followsPlayer: 0
+    launchEnemies: 0
+    alwaysOn: 0
+    shockwave: 0
+    pulses: 0
+    stormStrikes: 0
+    colorCycle: 0

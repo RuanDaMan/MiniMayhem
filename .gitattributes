@@ -1,0 +1,9 @@
+# Unity YAML: merge as text, keep line endings as written
+*.unity text eol=lf merge=unityyamlmerge
+*.prefab text eol=lf merge=unityyamlmerge
+*.asset text eol=lf merge=unityyamlmerge
+*.mat text eol=lf merge=unityyamlmerge
+*.meta text eol=lf
+*.cs text eol=lf
+*.png binary
+*.ttf binary

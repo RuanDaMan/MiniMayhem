@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fc09b0e8b8cfba4a8a4d020ab3479a1, type: 3}
+  m_Name: duck_orbit
+  m_EditorClassIdentifier: MiniMayhem.Runtime::MiniMayhem.WeaponDefinition
+  id: duck_orbit
+  displayName: Duck Orbit
+  description: Rubber ducks circle around you, bonking anything they touch.
+  archetype: 3
+  targeting: 4
+  tags: 5
+  form: 0
+  startsUnlocked: 1
+  unlockBiome: -1
+  icon: 47
+  projectileArt: 20
+  color: {r: 1, g: 0.88235295, b: 0.3019608, a: 1}
+  colorMax: {r: 1, g: 0.6901961, b: 0, a: 1}
+  levels:
+  - damage: 8
+    cooldown: 3
+    amount: 2
+    area: 1
+    speed: 3
+    duration: 0
+    pierce: 0
+    knockback: 1
+    note: 
+  - damage: 11
+    cooldown: 3
+    amount: 2
+    area: 1
+    speed: 3
+    duration: 0
+    pierce: 0
+    knockback: 1
+    note: +35% damage.
+  - damage: 11
+    cooldown: 3
+    amount: 3
+    area: 1
+    speed: 3
+    duration: 0
+    pierce: 0
+    knockback: 1
+    note: +1 duck.
+  - damage: 11
+    cooldown: 3
+    amount: 3
+    area: 1
+    speed: 4
+    duration: 0
+    pierce: 0
+    knockback: 1.2
+    note: Ducks spin faster.
+  - damage: 15
+    cooldown: 3
+    amount: 4
+    area: 1.2
+    speed: 4
+    duration: 0
+    pierce: 0
+    knockback: 1.4
+    note: 'Big spike: +1 duck, wider orbit.'
+  behaviour:
+    range: 3
+    homing: 0
+    explodeRadius: 0
+    bounces: 0
+    chains: 0
+    arcDegrees: 150
+    tickInterval: 0.5
+    hitCooldown: 0.5
+    slow: 0
+    poisonDps: 0
+    orbiters: 0
+    subBlasts: 0
+    spread: 12
+    followsPlayer: 0
+    launchEnemies: 0
+    alwaysOn: 0
+    shockwave: 0
+    pulses: 0
+    stormStrikes: 0
+    colorCycle: 0

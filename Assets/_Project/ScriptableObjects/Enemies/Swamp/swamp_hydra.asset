@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8a6c9d1f83dfa34a8d47045ddae800c, type: 3}
+  m_Name: swamp_hydra
+  m_EditorClassIdentifier: MiniMayhem.Runtime::MiniMayhem.EnemyDefinition
+  id: swamp_hydra
+  displayName: Swamp Hydra
+  description: Three grumpy heads, one big appetite.
+  tier: 2
+  behaviour: 13
+  maxHp: 3200
+  damage: 22
+  speed: 1.2
+  radius: 1.7
+  armor: 0
+  knockbackResist: 0.95
+  xp: 180
+  goldChance: 1
+  attackInterval: 2.5
+  attackRange: 6
+  projectileSpeed: 5.5
+  projectileCount: 1
+  child: {fileID: 11400000, guid: 993db40f5d915c44db18f58e1d585812, type: 2}
+  childCount: 10
+  patterns: 05000000010000000600000003000000
+  body: 5
+  features: 133249
+  primary: {r: 0.22745098, g: 0.5411765, b: 0.41568628, a: 1}
+  secondary: {r: 0.5411765, g: 0.8156863, b: 0.65882355, a: 1}
+  accent: {r: 1, g: 1, b: 1, a: 1}
+  visualScale: 1.25

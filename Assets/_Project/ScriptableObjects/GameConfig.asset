@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ab31a538f5dcf4a8acddad8609396b, type: 3}
+  m_Name: GameConfig
+  m_EditorClassIdentifier: MiniMayhem.Runtime::MiniMayhem.GameConfig
+  baseStats:
+  - stat: 0
+    value: 100
+  - stat: 1
+    value: 0.2
+  - stat: 3
+    value: 0
+  - stat: 10
+    value: 1.8
+  - stat: 13
+    value: 0.05
+  - stat: 14
+    value: 1.5
+  - stat: 20
+    value: 3
+  - stat: 21
+    value: 0.5
+  baseMoveSpeed: 4.6
+  heroRadius: 0.42
+  invulnerableAfterHit: 0.45
+  reviveInvulnerable: 2.5
+  deathKeepCap: 0.8
+  maxWeapons: 6
+  maxItems: 6
+  maxCardChoices: 4
+  xpBase: 5
+  xpLinear: 3
+  xpQuad: 0.32
+  matchLength: 600
+  modes:
+  - mode: 0
+    displayName: Survive
+    description: Defeat the finale boss at 9:00.
+    rewardMultiplier: 1.25
+  - mode: 1
+    displayName: Outlast
+    description: Stay alive until 10:00.
+    rewardMultiplier: 1
+  - mode: 2
+    displayName: Kill Count
+    description: Reach the kill target before 10:00.
+    rewardMultiplier: 1.1
+  enemyHpPerMinute: 0.22
+  enemyDamagePerMinute: 0.08
+  enemySpeedPerMinute: 0.015
+  enemyCap: 450
+  eliteHpMultiplier: 4
+  bossRepeatMultiplier: 1.8
+  despawnDistance: 26
+  maxGems: 320
+  healPickupAmount: 30
+  magnetInterval: {x: 45, y: 90}
+  healthInterval: {x: 45, y: 90}
+  bombDropChance: 0.0015
+  healDropChance: 0.002
+  coinValue: 1
+  skipGold: 10
+  skipHeal: 15
+  fallbackGold: 25
+  fallbackHeal: 40
+  fallbackStatBoost: 0.05
+  goldPerKill: 0.06
+  goldPerMinute: 6
+  winBonus: 60
+  matchesToUnlockNextBiome: 3
+  cameraSize: 8.5
+  cameraSizeSwarm: 10.5
+  cameraSwarmCount: 350
+  cameraFollow: 10

@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8a6c9d1f83dfa34a8d47045ddae800c, type: 3}
+  m_Name: ash_ghost
+  m_EditorClassIdentifier: MiniMayhem.Runtime::MiniMayhem.EnemyDefinition
+  id: ash_ghost
+  displayName: Ash Ghost
+  description: Hangs back and summons ember bats.
+  tier: 0
+  behaviour: 7
+  maxHp: 40
+  damage: 10
+  speed: 1.6
+  radius: 0.5
+  armor: 0
+  knockbackResist: 0
+  xp: 3
+  goldChance: 0.15
+  attackInterval: 5.5
+  attackRange: 6
+  projectileSpeed: 6
+  projectileCount: 1
+  child: {fileID: 11400000, guid: 4fb7c3f5c0e19b64880b15112c9a9047, type: 2}
+  childCount: 3
+  patterns: 
+  body: 4
+  features: 131073
+  primary: {r: 0.47843137, g: 0.47843137, b: 0.5411765, a: 1}
+  secondary: {r: 0.7490196, g: 0.7490196, b: 0.8117647, a: 1}
+  accent: {r: 1, g: 0.5411765, b: 0.23529412, a: 1}
+  visualScale: 1.35

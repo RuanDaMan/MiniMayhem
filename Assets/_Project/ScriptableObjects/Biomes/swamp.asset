@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63ee4676b7603404a890b44ee2c8bc80, type: 3}
+  m_Name: swamp
+  m_EditorClassIdentifier: MiniMayhem.Runtime::MiniMayhem.BiomeDefinition
+  id: swamp
+  displayName: Swamp
+  description: Murky water, hopping frogs and slow, squelchy mud.
+  index: 1
+  difficulty: 1.6
+  normals:
+  - {fileID: 11400000, guid: a42be73ee0aedca41b01425dcbe8432b, type: 2}
+  - {fileID: 11400000, guid: 993db40f5d915c44db18f58e1d585812, type: 2}
+  - {fileID: 11400000, guid: d7f96fcf8a4d42349bfa98b52e4c19bd, type: 2}
+  - {fileID: 11400000, guid: db824248298ae8045b77d667c8eb69d6, type: 2}
+  - {fileID: 11400000, guid: 9e1d168e71bbeb745be0a3dfd0841ac9, type: 2}
+  - {fileID: 11400000, guid: b3f4b792066d39a46a0183eb81f10ada, type: 2}
+  miniBosses:
+  - {fileID: 11400000, guid: 6f3e00636eab3bc45b4c4c60a21a16f4, type: 2}
+  - {fileID: 11400000, guid: 9d7f39f21d336ac498a2ba782eb0fa26, type: 2}
+  boss: {fileID: 11400000, guid: a80f95c360e958c4fb42d101655b2955, type: 2}
+  waves: {fileID: 11400000, guid: a242c4685e0e2af44b4345a05ca7c0a1, type: 2}
+  matchStyles: 010000000000000001000000
+  killTarget: 600
+  groundA: {r: 0.43137255, g: 0.56078434, b: 0.3529412, a: 1}
+  groundB: {r: 0.38039216, g: 0.49803922, b: 0.30980393, a: 1}
+  wallColor: {r: 0.3529412, g: 0.2901961, b: 0.22745098, a: 1}
+  props: 5f000000600000005e0000005d0000005c000000
+  propTints:
+  - {r: 0.7529412, g: 0.5411765, b: 0.3529412, a: 1}
+  - {r: 0.43529412, g: 0.7490196, b: 0.3529412, a: 1}
+  - {r: 0.6901961, g: 0.47843137, b: 0.8784314, a: 1}
+  - {r: 0.49019608, g: 0.54901963, b: 0.47843137, a: 1}
+  - {r: 0.30980393, g: 0.47843137, b: 0.22745098, a: 1}
+  propDensity: 3
+  hazard: 1
+  hazardColor: {r: 0.3529412, g: 0.2509804, b: 0.15686275, a: 0.7529412}
+  hazardDensity: 0.7
+  musicRoot: 57
+  musicMinor: 1
+  musicTempo: 112
+  musicSeed: 23

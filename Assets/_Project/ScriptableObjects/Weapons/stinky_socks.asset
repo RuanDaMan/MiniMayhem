@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fc09b0e8b8cfba4a8a4d020ab3479a1, type: 3}
+  m_Name: stinky_socks
+  m_EditorClassIdentifier: MiniMayhem.Runtime::MiniMayhem.WeaponDefinition
+  id: stinky_socks
+  displayName: Stinky Socks
+  description: A smelly aura that hurts every enemy close to you.
+  archetype: 6
+  targeting: 4
+  tags: 640
+  form: 0
+  startsUnlocked: 0
+  unlockBiome: 2
+  icon: 52
+  projectileArt: 26
+  color: {r: 0.7176471, g: 0.8784314, b: 0.3529412, a: 1}
+  colorMax: {r: 0.4862745, g: 1, b: 0.2901961, a: 1}
+  levels:
+  - damage: 5
+    cooldown: 0.5
+    amount: 1
+    area: 1
+    speed: 0
+    duration: 0
+    pierce: 0
+    knockback: 0.5
+    note: 
+  - damage: 7
+    cooldown: 0.5
+    amount: 1
+    area: 1
+    speed: 0
+    duration: 0
+    pierce: 0
+    knockback: 0.5
+    note: +40% damage.
+  - damage: 7
+    cooldown: 0.5
+    amount: 1
+    area: 1.3
+    speed: 0
+    duration: 0
+    pierce: 0
+    knockback: 0.5
+    note: Bigger stink cloud.
+  - damage: 7
+    cooldown: 0.4
+    amount: 1
+    area: 1.3
+    speed: 0
+    duration: 0
+    pierce: 0
+    knockback: 0.5
+    note: Ticks faster.
+  - damage: 10
+    cooldown: 0.4
+    amount: 1
+    area: 1.5
+    speed: 0
+    duration: 0
+    pierce: 0
+    knockback: 0.6
+    note: 'Big spike: bigger and nastier.'
+  behaviour:
+    range: 3
+    homing: 0
+    explodeRadius: 0
+    bounces: 0
+    chains: 0
+    arcDegrees: 150
+    tickInterval: 0.5
+    hitCooldown: 0.5
+    slow: 0
+    poisonDps: 0
+    orbiters: 0
+    subBlasts: 0
+    spread: 12
+    followsPlayer: 0
+    launchEnemies: 0
+    alwaysOn: 0
+    shockwave: 0
+    pulses: 0
+    stormStrikes: 0
+    colorCycle: 0

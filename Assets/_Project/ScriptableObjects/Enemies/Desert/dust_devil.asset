@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8a6c9d1f83dfa34a8d47045ddae800c, type: 3}
+  m_Name: dust_devil
+  m_EditorClassIdentifier: MiniMayhem.Runtime::MiniMayhem.EnemyDefinition
+  id: dust_devil
+  displayName: Dust Devil
+  description: A tiny tornado that never stops spinning.
+  tier: 0
+  behaviour: 1
+  maxHp: 16
+  damage: 8
+  speed: 3.2
+  radius: 0.42
+  armor: 0
+  knockbackResist: 0
+  xp: 1
+  goldChance: 0.08
+  attackInterval: 2.5
+  attackRange: 6
+  projectileSpeed: 6
+  projectileCount: 1
+  child: {fileID: 0}
+  childCount: 2
+  patterns: 
+  body: 10
+  features: 131073
+  primary: {r: 0.84705883, g: 0.72156864, b: 0.5019608, a: 1}
+  secondary: {r: 0.9411765, g: 0.84705883, b: 0.65882355, a: 1}
+  accent: {r: 0.5411765, g: 0.41568628, b: 0.22745098, a: 1}
+  visualScale: 1.35

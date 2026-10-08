@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63ee4676b7603404a890b44ee2c8bc80, type: 3}
+  m_Name: frozen
+  m_EditorClassIdentifier: MiniMayhem.Runtime::MiniMayhem.BiomeDefinition
+  id: frozen
+  displayName: Frozen Tundra
+  description: Snow, ice and slippery ground that keeps you sliding.
+  index: 3
+  difficulty: 3.4
+  normals:
+  - {fileID: 11400000, guid: e5aab9f22de2bb1498583db97a30f2ee, type: 2}
+  - {fileID: 11400000, guid: e29717df6059e0948a653369a6023860, type: 2}
+  - {fileID: 11400000, guid: 5b217e28aaf9ab845a4fa44c0d70b759, type: 2}
+  - {fileID: 11400000, guid: 3fe5e7f074feb9f498e676416b1a0150, type: 2}
+  - {fileID: 11400000, guid: eb6f44659edc7294d88d0a9251a4f532, type: 2}
+  - {fileID: 11400000, guid: 0e1c97c9fa0e24c409e2de82a3394387, type: 2}
+  miniBosses:
+  - {fileID: 11400000, guid: 6ba55f522e88f8a44a7bfcd2eb92fc09, type: 2}
+  - {fileID: 11400000, guid: 0f057021f8b9c0e4e8dd3ab47afe0d3d, type: 2}
+  boss: {fileID: 11400000, guid: 77187e151f90fed489f50dbb347d97e2, type: 2}
+  waves: {fileID: 11400000, guid: 1a709a0794e9c124f950f01a7a650ec4, type: 2}
+  matchStyles: 020000000000000002000000
+  killTarget: 800
+  groundA: {r: 0.9098039, g: 0.95686275, b: 1, a: 1}
+  groundB: {r: 0.8392157, g: 0.91764706, b: 0.9843137, a: 1}
+  wallColor: {r: 0.49803922, g: 0.6039216, b: 0.72156864, a: 1}
+  props: 6300000064000000650000005d000000
+  propTints:
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 0.6117647, g: 0.84313726, b: 1, a: 1}
+  - {r: 0.24313726, g: 0.47843137, b: 0.41568628, a: 1}
+  - {r: 0.6039216, g: 0.65882355, b: 0.7372549, a: 1}
+  propDensity: 3
+  hazard: 3
+  hazardColor: {r: 0.7058824, g: 0.9019608, b: 1, a: 0.6901961}
+  hazardDensity: 0.7
+  musicRoot: 64
+  musicMinor: 0
+  musicTempo: 118
+  musicSeed: 41

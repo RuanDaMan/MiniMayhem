@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2795c0852bb1c44db6001325816fab9, type: 3}
+  m_Name: Fusion_mega_mallet
+  m_EditorClassIdentifier: MiniMayhem.Runtime::MiniMayhem.FusionRecipe
+  a: {fileID: 11400000, guid: 47591c2edb399ae4d8b15421a53959a2, type: 2}
+  b: {fileID: 11400000, guid: 6413df2ed5098e14a99f8b320b41ed3b, type: 2}
+  result: {fileID: 11400000, guid: 0990cf8ded2720d4a862ff9a2d01981a, type: 2}

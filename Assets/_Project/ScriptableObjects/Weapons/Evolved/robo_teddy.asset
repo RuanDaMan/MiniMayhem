@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fc09b0e8b8cfba4a8a4d020ab3479a1, type: 3}
+  m_Name: robo_teddy
+  m_EditorClassIdentifier: MiniMayhem.Runtime::MiniMayhem.WeaponDefinition
+  id: robo_teddy
+  displayName: Robo Teddy
+  description: A robot teddy that follows you everywhere with rapid fire.
+  archetype: 7
+  targeting: 0
+  tags: 296
+  form: 1
+  startsUnlocked: 0
+  unlockBiome: -1
+  icon: 65
+  projectileArt: 23
+  color: {r: 0.8509804, g: 0.87058824, b: 0.9098039, a: 1}
+  colorMax: {r: 0.8509804, g: 0.87058824, b: 0.9098039, a: 1}
+  levels:
+  - damage: 14
+    cooldown: 1
+    amount: 1
+    area: 1
+    speed: 0
+    duration: 0
+    pierce: 1
+    knockback: 0.4
+    note: 
+  behaviour:
+    range: 8
+    homing: 0
+    explodeRadius: 0
+    bounces: 0
+    chains: 0
+    arcDegrees: 150
+    tickInterval: 0.15
+    hitCooldown: 0.5
+    slow: 0
+    poisonDps: 0
+    orbiters: 0
+    subBlasts: 0
+    spread: 12
+    followsPlayer: 1
+    launchEnemies: 0
+    alwaysOn: 0
+    shockwave: 0
+    pulses: 0
+    stormStrikes: 0
+    colorCycle: 0
