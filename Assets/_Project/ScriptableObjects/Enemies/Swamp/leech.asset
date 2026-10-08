@@ -17,7 +17,7 @@ MonoBehaviour:
   description: Wriggles fast towards you.
   tier: 0
   behaviour: 1
-  maxHp: 9
+  maxHp: 7
   damage: 6
   speed: 2.9
   radius: 0.36

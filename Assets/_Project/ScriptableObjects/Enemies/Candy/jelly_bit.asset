@@ -17,7 +17,7 @@ MonoBehaviour:
   description: A wobbly chunk of Jelly Blob.
   tier: 0
   behaviour: 0
-  maxHp: 16
+  maxHp: 8
   damage: 10
   speed: 2.8
   radius: 0.32

@@ -55,5 +55,6 @@ namespace MiniMayhem
         public bool fullscreen = true;
         public int resolutionIndex = -1;
         public bool showFps;
+        public bool rumble = true;
     }
 }

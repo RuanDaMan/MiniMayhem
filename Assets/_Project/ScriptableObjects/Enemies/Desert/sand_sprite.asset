@@ -17,7 +17,7 @@ MonoBehaviour:
   description: Circles you, closing in bit by bit.
   tier: 0
   behaviour: 9
-  maxHp: 14
+  maxHp: 9
   damage: 8
   speed: 3
   radius: 0.38

@@ -14,12 +14,16 @@ namespace MiniMayhem.EditorTools
         const string EnemyDir = SoRoot + "/Enemies";
         const string BiomeDir = SoRoot + "/Biomes";
 
+        // Enemy base stats rise per biome in the tables below; this divides HP back down so the biome difficulty
+        // multiplier is the main dial (finale ~2.5x the Meadow, not 6x).
+        static float hpScale = 1f;
+
         static EnemyDefinition E(string biome, string id, string name, string desc, EnemyTier tier, B beh, float hp, float dmg, float spd, float r, int xp, float gold,
             BodyShape body, F feats, string p, string s, string a, Action<EnemyDefinition> extra = null) =>
             LoadOrCreate<EnemyDefinition>($"{EnemyDir}/{biome}/{id}.asset", e =>
             {
                 e.id = id; e.displayName = name; e.description = desc; e.tier = tier; e.behaviour = beh;
-                e.maxHp = hp; e.damage = dmg; e.speed = spd; e.radius = r; e.xp = xp; e.goldChance = gold;
+                e.maxHp = Mathf.Round(hp / hpScale); e.damage = dmg; e.speed = spd; e.radius = r; e.xp = xp; e.goldChance = gold;
                 e.body = body; e.features = feats; e.primary = Hex(p); e.secondary = Hex(s); e.accent = Hex(a);
                 if (tier == EnemyTier.Boss) { e.knockbackResist = 0.95f; e.visualScale = 1.25f; e.projectileSpeed = 5.5f; }
                 else if (tier == EnemyTier.MiniBoss) { e.knockbackResist = 0.8f; e.visualScale = 1.3f; e.projectileSpeed = 6f; }
@@ -40,6 +44,7 @@ namespace MiniMayhem.EditorTools
             const EnemyTier N = EnemyTier.Normal, Mini = EnemyTier.MiniBoss, Bo = EnemyTier.Boss;
 
             // ---------------------------------------------------------------- 1. Meadow
+            hpScale = 1f;
             var slime = E("Meadow", "slime", "Slime", "A wobbly green blob. Mostly harmless. Mostly.", N, B.Chaser, 8, 6, 1.9f, 0.42f, 1, 0.08f, BodyShape.Blob, F.Eyes | F.Cheeks | F.Shine, "#7BD94B", "#C6F25A", "#2E8A1E");
             var bee = E("Meadow", "bee", "Bee Swarm", "Buzzes around in big angry packs.", N, B.Swarm, 4, 4, 3.0f, 0.32f, 1, 0.04f, BodyShape.Round, F.Eyes | F.Wings | F.Stripes | F.Antennae, "#FFD23F", "#FFF1A8", "#3A2A1A");
             var shroom = E("Meadow", "mushroom", "Mushroom", "Slow, sturdy and very stubborn.", N, B.Tank, 30, 8, 1.2f, 0.55f, 3, 0.15f, BodyShape.Tall, F.Eyes | F.Hat | F.Cheeks, "#FFF1D6", "#FFFFFF", "#FF4D4D", e => e.knockbackResist = 0.5f);
@@ -55,6 +60,7 @@ namespace MiniMayhem.EditorTools
             enemies.AddRange(new[] { slime, bee, shroom, snail, ladybug, flower, mole, beeGuard, sunflower });
 
             // ---------------------------------------------------------------- 2. Swamp
+            hpScale = 1.25f;
             var droplet = E("Swamp", "bog_droplet", "Bog Droplet", "What is left of a Bog Blob. Still sticky.", N, B.Chaser, 6, 5, 2.4f, 0.3f, 1, 0.02f, BodyShape.Blob, F.Eyes, "#6E9A5A", "#A8D08A", "#2E4A2A");
             var frog = E("Swamp", "frog", "Frog Hopper", "Moves in big, hard-to-read hops.", N, B.Hopper, 12, 8, 2.1f, 0.42f, 1, 0.08f, BodyShape.Round, F.Eyes | F.Cheeks, "#5FC45A", "#C6F25A", "#2E8A1E");
             var leech = E("Swamp", "leech", "Leech", "Wriggles fast towards you.", N, B.Rusher, 9, 6, 2.9f, 0.36f, 1, 0.06f, BodyShape.Worm, F.Eyes | F.Teeth, "#5A3A5A", "#8A5A8A", "#FF8FC7");
@@ -65,12 +71,13 @@ namespace MiniMayhem.EditorTools
             var croc = E("Swamp", "croc", "Croc", "All teeth. Charges and stomps.", Mini, B.Boss, 600, 18, 2.2f, 1.0f, 50, 1f, BodyShape.Worm, F.Eyes | F.Teeth | F.Angry, "#4A8A3A", "#A8D08A", "#FFFFFF", Boss(frog, 6, P.Charge, P.AimedSpread, P.Slam));
             var witch = E("Swamp", "fog_witch", "Fog Witch", "Summons frogs and drops bubbling bog pools.", Mini, B.Boss, 520, 14, 1.8f, 0.9f, 50, 1f, BodyShape.Ghost, F.Eyes | F.Hat | F.Cheeks, "#9A8ABF", "#E0D8FF", "#3A2A5A", Boss(frog, 8, P.Summon, P.RadialBurst, P.HazardDrop));
             var hydra = E("Swamp", "swamp_hydra", "Swamp Hydra", "Three grumpy heads, one big appetite.", Bo, B.Boss, 3200, 22, 1.2f, 1.7f, 180, 1f, BodyShape.Worm, F.Eyes | F.Teeth | F.Horns | F.Angry, "#3A8A6A", "#8AD0A8", "#FFFFFF", Boss(leech, 10, P.Spiral, P.AimedSpread, P.HazardDrop, P.Summon));
-            biomes.Add(Biome(1, "swamp", "Swamp", "Murky water, hopping frogs and slow, squelchy mud.", 1.6f, 1300, new[] { frog, leech, bog, dragonfly, toad, lurker }, new[] { croc, witch }, hydra,
+            biomes.Add(Biome(1, "swamp", "Swamp", "Murky water, hopping frogs and slow, squelchy mud.", 1.15f, 1300, new[] { frog, leech, bog, dragonfly, toad, lurker }, new[] { croc, witch }, hydra,
                 "#6E8F5A", "#617F4F", "#5A4A3A", new[] { ArtId.PropReed, ArtId.PropLilyPad, ArtId.PropMushroom, ArtId.PropRock, ArtId.PropGrass },
                 new[] { "#C08A5A", "#6FBF5A", "#B07AE0", "#7D8C7A", "#4F7A3A" }, HazardType.SlowMud, "#5A4028C0", 57, true, 112, 23));
             enemies.AddRange(new[] { frog, leech, bog, dragonfly, toad, lurker, croc, witch, hydra, droplet });
 
             // ---------------------------------------------------------------- 3. Desert
+            hpScale = 1.6f;
             var scorpion = E("Desert", "scorpion", "Scorpion", "Lines up and charges with its stinger out.", N, B.Charger, 22, 12, 2.3f, 0.45f, 2, 0.1f, BodyShape.Bug, F.Eyes | F.Tail | F.Legs | F.Angry, "#D08A3A", "#F0C07A", "#5A2A1A", Charge(2.8f, 7f));
             var cactus = E("Desert", "cactus_shooter", "Cactus Shooter", "Fires a fan of needles.", N, B.Shooter, 26, 8, 1.0f, 0.5f, 2, 0.12f, BodyShape.Tall, F.Eyes | F.Spikes | F.Cheeks, "#5FAE45", "#C6F25A", "#FFF1D6", Shoot(2.8f, 7.5f, 5.5f, 3));
             var sprite = E("Desert", "sand_sprite", "Sand Sprite", "Circles you, closing in bit by bit.", N, B.Orbiter, 14, 8, 3.0f, 0.38f, 1, 0.08f, BodyShape.Ghost, F.Eyes | F.Shine, "#F0D08A", "#FFF1D6", "#C08A3A");
@@ -80,12 +87,13 @@ namespace MiniMayhem.EditorTools
             var golem = E("Desert", "sand_golem", "Sand Golem", "Slams the ground and calls mummies.", Mini, B.Boss, 900, 22, 1.6f, 1.1f, 60, 1f, BodyShape.Square, F.Eyes | F.Angry, "#D8B060", "#F0D8A8", "#5A3A1A", Boss(mummy, 4, P.Slam, P.Charge, P.Summon));
             var cobra = E("Desert", "cobra", "Cobra", "Hypnotic spirals of venom.", Mini, B.Boss, 800, 18, 2.2f, 0.95f, 60, 1f, BodyShape.Worm, F.Eyes | F.Teeth | F.Stripes, "#C0A030", "#F0E080", "#5A3A1A", Boss(scarab, 10, P.AimedSpread, P.Spiral, P.Charge));
             var pharaoh = E("Desert", "pharaoh_cat", "Pharaoh Cat", "Ruler of the dunes. Expects to be worshipped.", Bo, B.Boss, 4800, 26, 1.3f, 1.7f, 220, 1f, BodyShape.Round, F.Eyes | F.Ears | F.Crown | F.Cheeks, "#F0C060", "#3A6AD0", "#FFD23F", Boss(mummy, 6, P.RadialBurst, P.Summon, P.Charge, P.Spiral));
-            biomes.Add(Biome(2, "desert", "Desert", "Hot sand, prickly cacti and sudden sandstorms that hide what is coming.", 2.4f, 1400, new[] { scorpion, cactus, sprite, scarab, mummy, devil }, new[] { golem, cobra }, pharaoh,
+            biomes.Add(Biome(2, "desert", "Desert", "Hot sand, prickly cacti and sudden sandstorms that hide what is coming.", 1.3f, 1400, new[] { scorpion, cactus, sprite, scarab, mummy, devil }, new[] { golem, cobra }, pharaoh,
                 "#F0D08A", "#E6C27A", "#C48A52", new[] { ArtId.PropCactus, ArtId.PropBones, ArtId.PropRock, ArtId.PropSkull, ArtId.PropCactus },
                 new[] { "#5FAE45", "#FFF1D6", "#C9A36A", "#FFF1D6", "#4E9A3A" }, HazardType.Sandstorm, "#00000000", 62, true, 124, 37));
             enemies.AddRange(new[] { scorpion, cactus, sprite, scarab, mummy, devil, golem, cobra, pharaoh });
 
             // ---------------------------------------------------------------- 4. Frozen Tundra
+            hpScale = 1.75f;
             var snowman = E("Frozen", "snowman", "Snowman", "Throws snowballs. Hates summer.", N, B.Shooter, 30, 9, 1.0f, 0.5f, 2, 0.12f, BodyShape.Snowman, F.Eyes | F.Hat | F.Cheeks, "#F4F8FF", "#FFFFFF", "#3A3A4A", Shoot(2.4f, 7.5f, 6f));
             var penguin = E("Frozen", "penguin", "Penguin Slider", "Belly-slides at you at full speed.", N, B.Charger, 26, 12, 2.0f, 0.45f, 2, 0.1f, BodyShape.Round, F.Eyes | F.Cheeks, "#3A3F5A", "#FFFFFF", "#FF9A3C", Charge(2.6f, 8f));
             var iceSprite = E("Frozen", "ice_sprite", "Ice Sprite", "Dances around you in a closing circle.", N, B.Orbiter, 18, 9, 3.2f, 0.38f, 1, 0.08f, BodyShape.Star, F.Eyes | F.Shine, "#9CD7FF", "#FFFFFF", "#3A6AD0");
@@ -95,12 +103,13 @@ namespace MiniMayhem.EditorTools
             var troll = E("Frozen", "ice_troll", "Ice Troll", "Big fists, bigger stomps.", Mini, B.Boss, 1300, 26, 1.7f, 1.15f, 70, 1f, BodyShape.Square, F.Eyes | F.Horns | F.Teeth, "#8AB8D8", "#E8F0FF", "#FFFFFF", Boss(yeti, 3, P.Slam, P.Charge, P.Summon));
             var guard = E("Frozen", "snow_guard", "Snow Queen's Guard", "A frosty sentinel with icy volleys.", Mini, B.Boss, 1150, 22, 2.0f, 1.0f, 70, 1f, BodyShape.Tall, F.Eyes | F.Crown | F.Shine, "#BFD4FF", "#FFFFFF", "#3A6AD0", Boss(iceSprite, 8, P.AimedSpread, P.RadialBurst, P.Summon));
             var mammoth = E("Frozen", "frost_mammoth", "Frost Mammoth", "An ancient woolly giant that shakes the ice.", Bo, B.Boss, 6800, 30, 1.3f, 1.9f, 260, 1f, BodyShape.Round, F.Eyes | F.Horns | F.Ears, "#9A7A6A", "#E8DCC0", "#FFFFFF", Boss(wolf, 10, P.Charge, P.Slam, P.RadialBurst, P.Summon));
-            biomes.Add(Biome(3, "frozen", "Frozen Tundra", "Snow, ice and slippery ground that keeps you sliding.", 3.4f, 1500, new[] { snowman, penguin, iceSprite, yeti, wolf, icicle }, new[] { troll, guard }, mammoth,
+            biomes.Add(Biome(3, "frozen", "Frozen Tundra", "Snow, ice and slippery ground that keeps you sliding.", 1.45f, 1500, new[] { snowman, penguin, iceSprite, yeti, wolf, icicle }, new[] { troll, guard }, mammoth,
                 "#E8F4FF", "#D6EAFB", "#7F9AB8", new[] { ArtId.PropSnowdrift, ArtId.PropIceCrystal, ArtId.PropPine, ArtId.PropRock },
                 new[] { "#FFFFFF", "#9CD7FF", "#3E7A6A", "#9AA8BC" }, HazardType.Ice, "#B4E6FFB0", 64, false, 118, 41));
             enemies.AddRange(new[] { snowman, penguin, iceSprite, yeti, wolf, icicle, troll, guard, mammoth });
 
             // ---------------------------------------------------------------- 5. Volcano
+            hpScale = 1.95f;
             var ember = E("Volcano", "ember_blob", "Ember Blob", "A hot little piece of a Lava Slime.", N, B.Chaser, 12, 8, 2.6f, 0.32f, 1, 0.02f, BodyShape.Blob, F.Eyes, "#FF8A3C", "#FFD23F", "#8A2A1A");
             var lavaSlime = E("Volcano", "lava_slime", "Lava Slime", "Splits into embers when popped.", N, B.Splitter, 40, 11, 1.7f, 0.55f, 2, 0.12f, BodyShape.Blob, F.Eyes | F.Shine | F.Angry, "#FF5A2A", "#FFD23F", "#8A2A1A", Child(ember, 3));
             var imp = E("Volcano", "fire_imp", "Fire Imp", "Runs up, fizzes... and explodes.", N, B.Exploder, 22, 14, 3.0f, 0.4f, 2, 0.1f, BodyShape.Round, F.Eyes | F.Horns | F.Tail | F.Angry, "#FF4D4D", "#FFB000", "#3A1A1A");
@@ -111,12 +120,13 @@ namespace MiniMayhem.EditorTools
             var lavaGolem = E("Volcano", "lava_golem", "Lava Golem", "Leaves lava pools wherever it stomps.", Mini, B.Boss, 1900, 30, 1.6f, 1.2f, 80, 1f, BodyShape.Square, F.Eyes | F.Angry | F.Shine, "#5A3A3A", "#FF7A2A", "#FFD23F", Boss(ember, 6, P.Slam, P.HazardDrop, P.Charge));
             var drake = E("Volcano", "fire_drake", "Fire Drake", "Spits spirals of fire.", Mini, B.Boss, 1700, 26, 2.3f, 1.05f, 80, 1f, BodyShape.Bird, F.Eyes | F.Horns | F.Tail, "#D03A2A", "#FFB000", "#FFD23F", Boss(bat, 8, P.Spiral, P.AimedSpread, P.Charge));
             var dragon = E("Volcano", "magma_dragon", "Magma Dragon", "The mountain's furious heart.", Bo, B.Boss, 9500, 34, 1.4f, 1.9f, 300, 1f, BodyShape.Bird, F.Eyes | F.Horns | F.Teeth | F.Tail | F.Angry, "#B0201A", "#FF8A3C", "#FFD23F", Boss(imp, 6, P.Spiral, P.HazardDrop, P.RadialBurst, P.Charge, P.Summon));
-            biomes.Add(Biome(4, "volcano", "Volcano", "Scorching rock and bubbling lava pools that burn to stand in.", 4.6f, 1600, new[] { lavaSlime, imp, bat, crab, worm, ghost }, new[] { lavaGolem, drake }, dragon,
+            biomes.Add(Biome(4, "volcano", "Volcano", "Scorching rock and bubbling lava pools that burn to stand in.", 1.6f, 1600, new[] { lavaSlime, imp, bat, crab, worm, ghost }, new[] { lavaGolem, drake }, dragon,
                 "#5A3A3A", "#4D3030", "#2E1E1E", new[] { ArtId.PropLavaRock, ArtId.PropEmber, ArtId.PropSkull, ArtId.PropBones, ArtId.PropRock },
                 new[] { "#3A2A2A", "#FFFFFF", "#D8C8B0", "#D8C8B0", "#6A4A4A" }, HazardType.Lava, "#FF7319D9", 55, true, 136, 53));
             enemies.AddRange(new[] { lavaSlime, imp, bat, crab, worm, ghost, lavaGolem, drake, dragon, ember });
 
             // ---------------------------------------------------------------- 6. Candy Realm
+            hpScale = 2.1f;
             var jellyBit = E("Candy", "jelly_bit", "Jelly Bit", "A wobbly chunk of Jelly Blob.", N, B.Chaser, 16, 10, 2.8f, 0.32f, 1, 0.02f, BodyShape.Blob, F.Eyes | F.Shine, "#FF6FB0", "#FFC8E6", "#8A1A4A");
             var gummy = E("Candy", "gummy_bear", "Gummy Bear", "Chewy, cheerful and coming for you.", N, B.Chaser, 50, 14, 2.2f, 0.45f, 2, 0.1f, BodyShape.Round, F.Eyes | F.Ears | F.Cheeks | F.Shine, "#FF4D6D", "#FFB8C8", "#8A1A2A");
             var cupcake = E("Candy", "cupcake_bomber", "Cupcake Bomber", "Lobs frosting bombs where you are heading.", N, B.Bomber, 45, 14, 1.6f, 0.48f, 2, 0.12f, BodyShape.Cone, F.Eyes | F.Sprinkles | F.Cheeks, "#D9A066", "#FFC8E6", "#FF4D6D", e => e.attackInterval = 2.6f);
@@ -127,7 +137,7 @@ namespace MiniMayhem.EditorTools
             var donut = E("Candy", "giant_donut", "Giant Donut", "Rolls at you and sprays sprinkles.", Mini, B.Boss, 2800, 32, 2.0f, 1.2f, 90, 1f, BodyShape.Round, F.Eyes | F.Sprinkles | F.Cheeks, "#FF8FC7", "#D9A066", "#FFFFFF", Boss(jellyBit, 8, P.RadialBurst, P.Charge, P.Spiral));
             var knight = E("Candy", "candy_cane_knight", "Candy Cane Knight", "A minty knight with a mean charge.", Mini, B.Boss, 2600, 34, 2.3f, 1.1f, 90, 1f, BodyShape.Tall, F.Eyes | F.Stripes | F.Hat | F.Angry, "#FFFFFF", "#FF4D4D", "#FF4D4D", Boss(gummy, 4, P.Charge, P.AimedSpread, P.Slam));
             var cake = E("Candy", "cake_king", "Cake King", "The sweetest, meanest ruler of all. The finale.", Bo, B.Boss, 14000, 38, 1.5f, 2.0f, 400, 1f, BodyShape.Square, F.Eyes | F.Crown | F.Sprinkles | F.Cheeks | F.Angry, "#FFC8E6", "#FF8FC7", "#FFD23F", Boss(gummy, 6, P.RadialBurst, P.Summon, P.Spiral, P.Charge, P.Slam, P.HazardDrop, P.AimedSpread));
-            biomes.Add(Biome(5, "candy", "Candy Realm", "A sugary dream with a sticky twist. The finale biome.", 6f, 1800, new[] { gummy, cupcake, lolly, jelly, cookie, choc }, new[] { donut, knight }, cake,
+            biomes.Add(Biome(5, "candy", "Candy Realm", "A sugary dream with a sticky twist. The finale biome.", 1.8f, 1800, new[] { gummy, cupcake, lolly, jelly, cookie, choc }, new[] { donut, knight }, cake,
                 "#FFC8E6", "#FFB8DC", "#FF8FC7", new[] { ArtId.PropCandyCane, ArtId.PropLollipop, ArtId.PropGumdrop, ArtId.PropGumdrop, ArtId.PropTree },
                 new[] { "#FFFFFF", "#FFF1D6", "#7FE0FF", "#FFD23F", "#FF9ADF" }, HazardType.Sugar, "#FFF2CCD0", 65, false, 140, 67));
             enemies.AddRange(new[] { gummy, cupcake, lolly, jelly, cookie, choc, donut, knight, cake, jellyBit });

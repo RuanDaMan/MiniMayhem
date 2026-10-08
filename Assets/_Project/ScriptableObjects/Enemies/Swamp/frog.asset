@@ -17,7 +17,7 @@ MonoBehaviour:
   description: Moves in big, hard-to-read hops.
   tier: 0
   behaviour: 10
-  maxHp: 12
+  maxHp: 10
   damage: 8
   speed: 2.1
   radius: 0.42

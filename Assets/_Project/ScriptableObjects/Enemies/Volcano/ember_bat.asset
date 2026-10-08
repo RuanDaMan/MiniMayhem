@@ -17,7 +17,7 @@ MonoBehaviour:
   description: Flaps in from the smoke in huge flocks.
   tier: 0
   behaviour: 6
-  maxHp: 12
+  maxHp: 6
   damage: 9
   speed: 3.5
   radius: 0.36

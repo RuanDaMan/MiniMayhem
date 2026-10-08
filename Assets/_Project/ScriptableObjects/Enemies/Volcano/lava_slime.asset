@@ -17,7 +17,7 @@ MonoBehaviour:
   description: Splits into embers when popped.
   tier: 0
   behaviour: 5
-  maxHp: 40
+  maxHp: 21
   damage: 11
   speed: 1.7
   radius: 0.55

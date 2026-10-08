@@ -17,7 +17,7 @@ MonoBehaviour:
   description: The mountain's furious heart.
   tier: 2
   behaviour: 13
-  maxHp: 9500
+  maxHp: 4872
   damage: 34
   speed: 1.4
   radius: 1.9

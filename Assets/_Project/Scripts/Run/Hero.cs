@@ -122,9 +122,16 @@ namespace MiniMayhem
 
         public void TakeDamage(float amount, string source, bool ignoreInvuln = false)
         {
-            if (Dead || GodMode) return;
+            if (Dead) return;
             if (invuln > 0 && !ignoreInvuln) return;
             float dmg = Mathf.Max(1f, amount - run.Stats.Armor);
+            if (GodMode)
+            {
+                // Debug / test mode: the hit registers but costs no HP.
+                run.State.damageTaken += dmg;
+                if (!ignoreInvuln) invuln = run.Config.invulnerableAfterHit;
+                return;
+            }
             Hp -= dmg;
             LastDamageSource = source;
             if (!ignoreInvuln) invuln = run.Config.invulnerableAfterHit;

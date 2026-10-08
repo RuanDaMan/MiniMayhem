@@ -17,7 +17,7 @@ MonoBehaviour:
   description: Rolls at you and sprays sprinkles.
   tier: 1
   behaviour: 13
-  maxHp: 2800
+  maxHp: 1333
   damage: 32
   speed: 2
   radius: 1.2

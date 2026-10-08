@@ -16,7 +16,7 @@ MonoBehaviour:
   displayName: Frozen Tundra
   description: Snow, ice and slippery ground that keeps you sliding.
   index: 3
-  difficulty: 3.4
+  difficulty: 1.45
   normals:
   - {fileID: 11400000, guid: e5aab9f22de2bb1498583db97a30f2ee, type: 2}
   - {fileID: 11400000, guid: e29717df6059e0948a653369a6023860, type: 2}

@@ -17,7 +17,7 @@ MonoBehaviour:
   description: Dances around you in a closing circle.
   tier: 0
   behaviour: 9
-  maxHp: 18
+  maxHp: 10
   damage: 9
   speed: 3.2
   radius: 0.38

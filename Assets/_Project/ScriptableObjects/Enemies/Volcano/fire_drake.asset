@@ -17,7 +17,7 @@ MonoBehaviour:
   description: Spits spirals of fire.
   tier: 1
   behaviour: 13
-  maxHp: 1700
+  maxHp: 872
   damage: 26
   speed: 2.3
   radius: 1.05

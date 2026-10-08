@@ -17,7 +17,7 @@ MonoBehaviour:
   description: Hangs back and summons ember bats.
   tier: 0
   behaviour: 7
-  maxHp: 40
+  maxHp: 21
   damage: 10
   speed: 1.6
   radius: 0.5

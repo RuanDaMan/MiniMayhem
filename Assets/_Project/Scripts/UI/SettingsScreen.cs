@@ -31,6 +31,7 @@ namespace MiniMayhem
             AddRow(col, () => $"Damage numbers: {OnOff(S.damageNumbers)}", _ => { S.damageNumbers = !S.damageNumbers; flow.ApplySettings(); }, () => { S.damageNumbers = !S.damageNumbers; flow.ApplySettings(); });
             AddRow(col, () => $"Screen shake: {OnOff(S.screenShake)}", _ => { S.screenShake = !S.screenShake; flow.ApplySettings(); }, () => { S.screenShake = !S.screenShake; flow.ApplySettings(); });
             AddRow(col, () => $"Colour-blind enemy shots: {OnOff(S.colorblind)}", _ => S.colorblind = !S.colorblind, () => S.colorblind = !S.colorblind);
+            AddRow(col, () => $"Controller rumble: {OnOff(S.rumble)}", _ => S.rumble = !S.rumble, () => { S.rumble = !S.rumble; if (S.rumble) flow.Rumble(0.4f, 0.4f, 0.2f); });
             AddRow(col, () => $"Fullscreen: {OnOff(S.fullscreen)}", _ => { S.fullscreen = !S.fullscreen; GameBootstrap.ApplyDisplay(S); }, () => { S.fullscreen = !S.fullscreen; GameBootstrap.ApplyDisplay(S); });
             AddRow(col, () => $"Resolution   < {ResText()} >", ChangeRes, null);
             AddRow(col, () => $"Show FPS (View / F3): {OnOff(S.showFps)}", _ => S.showFps = !S.showFps, () => S.showFps = !S.showFps);
@@ -74,7 +75,7 @@ namespace MiniMayhem
         void AddRow(Transform parent, Func<string> label, Action<int> change, Action press)
         {
             var r = new Row { label = label, change = change, press = press };
-            r.button = Ui.Button(parent, "", () => { r.press?.Invoke(); RefreshLabels(); }, new Vector2(880, 66), 30);
+            r.button = Ui.Button(parent, "", () => { r.press?.Invoke(); RefreshLabels(); }, new Vector2(880, 60), 30);
             var t = Ui.Text(r.button.transform, "", 30, UiColors.Text);
             t.rectTransform.Stretch(20, 4, 20, 4);
             rows.Add(r);

@@ -17,7 +17,7 @@ MonoBehaviour:
   description: What is left of a Bog Blob. Still sticky.
   tier: 0
   behaviour: 0
-  maxHp: 6
+  maxHp: 5
   damage: 5
   speed: 2.4
   radius: 0.3

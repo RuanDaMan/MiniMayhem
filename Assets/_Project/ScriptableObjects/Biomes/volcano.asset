@@ -16,7 +16,7 @@ MonoBehaviour:
   displayName: Volcano
   description: Scorching rock and bubbling lava pools that burn to stand in.
   index: 4
-  difficulty: 4.6
+  difficulty: 1.6
   normals:
   - {fileID: 11400000, guid: 173e1b6fe173fca4e8b11137de28c274, type: 2}
   - {fileID: 11400000, guid: 16d817507344382439f7b014925e1efa, type: 2}

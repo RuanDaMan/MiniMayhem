@@ -17,7 +17,7 @@ MonoBehaviour:
   description: Splits into droplets when popped.
   tier: 0
   behaviour: 5
-  maxHp: 26
+  maxHp: 21
   damage: 8
   speed: 1.6
   radius: 0.55

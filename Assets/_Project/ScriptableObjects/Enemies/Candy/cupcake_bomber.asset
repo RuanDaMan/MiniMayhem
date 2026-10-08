@@ -17,7 +17,7 @@ MonoBehaviour:
   description: Lobs frosting bombs where you are heading.
   tier: 0
   behaviour: 12
-  maxHp: 45
+  maxHp: 21
   damage: 14
   speed: 1.6
   radius: 0.48

@@ -17,7 +17,7 @@ MonoBehaviour:
   description: Tunnels through the candy and pops up beside you.
   tier: 0
   behaviour: 11
-  maxHp: 70
+  maxHp: 33
   damage: 16
   speed: 2.6
   radius: 0.5

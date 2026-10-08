@@ -17,7 +17,7 @@ MonoBehaviour:
   description: All teeth. Charges and stomps.
   tier: 1
   behaviour: 13
-  maxHp: 600
+  maxHp: 480
   damage: 18
   speed: 2.2
   radius: 1

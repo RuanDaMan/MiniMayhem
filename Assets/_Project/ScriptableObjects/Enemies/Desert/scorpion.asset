@@ -17,7 +17,7 @@ MonoBehaviour:
   description: Lines up and charges with its stinger out.
   tier: 0
   behaviour: 4
-  maxHp: 22
+  maxHp: 14
   damage: 12
   speed: 2.3
   radius: 0.45

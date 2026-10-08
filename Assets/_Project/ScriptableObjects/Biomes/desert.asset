@@ -16,7 +16,7 @@ MonoBehaviour:
   displayName: Desert
   description: Hot sand, prickly cacti and sudden sandstorms that hide what is coming.
   index: 2
-  difficulty: 2.4
+  difficulty: 1.3
   normals:
   - {fileID: 11400000, guid: 4a0c1f870e968b84aa5f196052ebc6b4, type: 2}
   - {fileID: 11400000, guid: 191803f821f9c0e4f901d49b752e6f15, type: 2}

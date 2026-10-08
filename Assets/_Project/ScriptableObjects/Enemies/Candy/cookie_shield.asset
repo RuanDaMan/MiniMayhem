@@ -17,7 +17,7 @@ MonoBehaviour:
   description: 'Thick and crunchy: takes much less damage.'
   tier: 0
   behaviour: 2
-  maxHp: 130
+  maxHp: 62
   damage: 16
   speed: 1.2
   radius: 0.6

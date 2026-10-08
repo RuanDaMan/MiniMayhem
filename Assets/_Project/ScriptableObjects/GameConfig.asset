@@ -37,9 +37,9 @@ MonoBehaviour:
   maxWeapons: 6
   maxItems: 6
   maxCardChoices: 4
-  xpBase: 4
-  xpLinear: 1.6
-  xpQuad: 0.1
+  xpBase: 5
+  xpLinear: 2
+  xpQuad: 0.22
   matchLength: 600
   modes:
   - mode: 0

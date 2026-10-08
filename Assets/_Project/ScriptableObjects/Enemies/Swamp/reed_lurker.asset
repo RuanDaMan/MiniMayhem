@@ -17,7 +17,7 @@ MonoBehaviour:
   description: Hides under the water and pops up right next to you.
   tier: 0
   behaviour: 11
-  maxHp: 20
+  maxHp: 16
   damage: 10
   speed: 2.2
   radius: 0.45

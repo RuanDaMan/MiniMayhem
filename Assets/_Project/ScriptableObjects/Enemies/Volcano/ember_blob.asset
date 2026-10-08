@@ -17,7 +17,7 @@ MonoBehaviour:
   description: A hot little piece of a Lava Slime.
   tier: 0
   behaviour: 0
-  maxHp: 12
+  maxHp: 6
   damage: 8
   speed: 2.6
   radius: 0.32

@@ -16,7 +16,7 @@ MonoBehaviour:
   displayName: Swamp
   description: Murky water, hopping frogs and slow, squelchy mud.
   index: 1
-  difficulty: 1.6
+  difficulty: 1.15
   normals:
   - {fileID: 11400000, guid: a42be73ee0aedca41b01425dcbe8432b, type: 2}
   - {fileID: 11400000, guid: 993db40f5d915c44db18f58e1d585812, type: 2}

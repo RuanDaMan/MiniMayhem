@@ -20,7 +20,7 @@ namespace MiniMayhem
 
         int tab;
         readonly List<TextMeshProUGUI> tabLabels = new();
-        readonly List<Image> tabBgs = new();
+        readonly List<Button> tabButtons = new();
         RectTransform listContent;
         ScrollRect scroll;
         readonly List<(Button b, Entry e)> buttons = new();
@@ -49,7 +49,7 @@ namespace MiniMayhem
                 var b = Ui.Button(tabsRow, Tabs[i], () => SetTab(idx), new Vector2(220, 62), 26, "Tab" + i);
                 var nav = b.navigation; nav.mode = Navigation.Mode.None; b.navigation = nav;
                 tabLabels.Add(b.Label());
-                tabBgs.Add(b.Bg());
+                tabButtons.Add(b);
             }
             var rb = Ui.Text(tabsRow, "RB", 26, UiColors.TextDim);
             rb.rectTransform.sizeDelta = new Vector2(60, 60);
@@ -89,9 +89,11 @@ namespace MiniMayhem
         public void SetTab(int t)
         {
             tab = (t + Tabs.Length) % Tabs.Length;
-            for (int i = 0; i < tabBgs.Count; i++)
+            for (int i = 0; i < tabButtons.Count; i++)
             {
-                tabBgs[i].color = i == tab ? UiColors.ButtonFocus : UiColors.Button;
+                var cb = tabButtons[i].colors;
+                cb.normalColor = cb.highlightedColor = cb.selectedColor = i == tab ? UiColors.ButtonFocus : UiColors.Button;
+                tabButtons[i].colors = cb;
                 tabLabels[i].color = i == tab ? UiColors.Ink : UiColors.Text;
             }
             foreach (var (b, _) in buttons) UnityEngine.Object.Destroy(b.gameObject);

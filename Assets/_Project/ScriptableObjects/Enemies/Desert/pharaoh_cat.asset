@@ -17,7 +17,7 @@ MonoBehaviour:
   description: Ruler of the dunes. Expects to be worshipped.
   tier: 2
   behaviour: 13
-  maxHp: 4800
+  maxHp: 3000
   damage: 26
   speed: 1.3
   radius: 1.7

@@ -17,7 +17,7 @@ MonoBehaviour:
   description: Chewy, cheerful and coming for you.
   tier: 0
   behaviour: 0
-  maxHp: 50
+  maxHp: 24
   damage: 14
   speed: 2.2
   radius: 0.45

@@ -17,7 +17,7 @@ MonoBehaviour:
   description: Slams the ground and calls mummies.
   tier: 1
   behaviour: 13
-  maxHp: 900
+  maxHp: 562
   damage: 22
   speed: 1.6
   radius: 1.1

@@ -16,7 +16,7 @@ MonoBehaviour:
   displayName: Candy Realm
   description: A sugary dream with a sticky twist. The finale biome.
   index: 5
-  difficulty: 6
+  difficulty: 1.8
   normals:
   - {fileID: 11400000, guid: 7b315c10eb97da744b846962cd4fb0eb, type: 2}
   - {fileID: 11400000, guid: 5cb94543e94297e40a86081dbda61aae, type: 2}

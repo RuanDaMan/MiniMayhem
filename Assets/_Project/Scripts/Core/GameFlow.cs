@@ -35,7 +35,7 @@ namespace MiniMayhem
         readonly List<UiScreen> screens = new();
         readonly Dictionary<(int, int), MatchMode> plannedModes = new();
         FlowState settingsReturn, codexReturn;
-        float bossIntroTimer, resultsDelay;
+        float bossIntroTimer, resultsDelay, rumbleTimer;
         System.Random modeRng = new();
 
         public BiomeDefinition SelectedBiome { get; set; }
@@ -66,7 +66,11 @@ namespace MiniMayhem
             Go(StartState ?? FlowState.Title);
         }
 
-        void OnDestroy() => GameServices.Unregister(this);
+        void OnDestroy()
+        {
+            GameServices.Unregister(this);
+            UnityEngine.InputSystem.InputSystem.ResetHaptics();
+        }
 
         T Add<T>(T screen, string name) where T : UiScreen
         {
@@ -157,6 +161,12 @@ namespace MiniMayhem
                     break;
             }
 
+            if (rumbleTimer > 0)
+            {
+                rumbleTimer -= Time.unscaledDeltaTime;
+                if (rumbleTimer <= 0) UnityEngine.InputSystem.Gamepad.current?.SetMotorSpeeds(0, 0);
+            }
+
             if (resultsDelay > 0)
             {
                 resultsDelay -= Time.unscaledDeltaTime;
@@ -191,6 +201,19 @@ namespace MiniMayhem
             Go(FlowState.WeaponPick);
         }
 
+        /// <summary>Short controller rumble (if enabled in settings).</summary>
+        public void Rumble(float low, float high, float seconds)
+        {
+            if (!Meta.Data.settings.rumble) return;
+            var pad = UnityEngine.InputSystem.Gamepad.current;
+            if (pad == null) return;
+            pad.SetMotorSpeeds(low, high);
+            rumbleTimer = Mathf.Max(rumbleTimer, seconds);
+        }
+
+        void OnHeroDamaged(float amount) => Rumble(0.25f, 0.45f, 0.12f);
+        void OnLeveledUp() => Rumble(0.1f, 0.3f, 0.15f);
+
         public void StartRun(RunSetup setup)
         {
             DestroyRun();
@@ -198,6 +221,8 @@ namespace MiniMayhem
             Run = RunController.Create(Db, Meta, Controls, CameraRig, setup);
             Run.RunEnded += OnRunEnded;
             Run.BossSpawned += OnBossSpawned;
+            Run.LeveledUp += OnLeveledUp;
+            Run.Hero.Damaged += OnHeroDamaged;
             Run.Numbers.Enabled = Meta.Data.settings.damageNumbers;
             Hud.Bind(Run);
             Audio?.PlayBiomeMusic(setup.biome);
@@ -230,6 +255,7 @@ namespace MiniMayhem
 
         void OnBossSpawned(Enemy boss, bool finale)
         {
+            Rumble(0.6f, 0.4f, 0.5f);
             if (State != FlowState.Running) return;
             bossIntroTimer = 1.3f;
             Go(FlowState.BossIntro);
@@ -272,7 +298,9 @@ namespace MiniMayhem
             if (Run == null) return;
             Run.RunEnded -= OnRunEnded;
             Run.BossSpawned -= OnBossSpawned;
+            Run.LeveledUp -= OnLeveledUp;
             Hud.Bind(null);
+            UnityEngine.InputSystem.Gamepad.current?.SetMotorSpeeds(0, 0);
             Destroy(Run.gameObject);
             Run = null;
         }

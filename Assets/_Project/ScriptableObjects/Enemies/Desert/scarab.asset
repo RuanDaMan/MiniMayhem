@@ -17,7 +17,7 @@ MonoBehaviour:
   description: Shiny beetles in a clicking tide.
   tier: 0
   behaviour: 6
-  maxHp: 8
+  maxHp: 5
   damage: 6
   speed: 3
   radius: 0.34

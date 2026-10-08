@@ -17,7 +17,7 @@ MonoBehaviour:
   description: A frosty sentinel with icy volleys.
   tier: 1
   behaviour: 13
-  maxHp: 1150
+  maxHp: 657
   damage: 22
   speed: 2
   radius: 1

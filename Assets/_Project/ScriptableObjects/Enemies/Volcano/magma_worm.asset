@@ -17,7 +17,7 @@ MonoBehaviour:
   description: Swims through the rock and bursts out next to you.
   tier: 0
   behaviour: 11
-  maxHp: 45
+  maxHp: 23
   damage: 14
   speed: 2.4
   radius: 0.5

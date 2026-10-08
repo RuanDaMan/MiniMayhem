@@ -17,7 +17,7 @@ MonoBehaviour:
   description: Zips around in huge swarms.
   tier: 0
   behaviour: 6
-  maxHp: 5
+  maxHp: 4
   damage: 5
   speed: 3.3
   radius: 0.32

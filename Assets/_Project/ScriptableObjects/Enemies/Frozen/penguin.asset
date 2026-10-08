@@ -17,7 +17,7 @@ MonoBehaviour:
   description: Belly-slides at you at full speed.
   tier: 0
   behaviour: 4
-  maxHp: 26
+  maxHp: 15
   damage: 12
   speed: 2
   radius: 0.45

@@ -34,9 +34,9 @@ namespace MiniMayhem
         public int maxCardChoices = 4;
 
         [Header("XP curve: xp(level) = base + linear*level + quad*level^2")]
-        public float xpBase = 4f;
-        public float xpLinear = 1.6f;
-        public float xpQuad = 0.1f;
+        public float xpBase = 5f;
+        public float xpLinear = 2f;
+        public float xpQuad = 0.22f;
 
         [Header("Match")]
         public float matchLength = 600f;

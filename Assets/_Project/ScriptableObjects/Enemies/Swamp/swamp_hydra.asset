@@ -17,7 +17,7 @@ MonoBehaviour:
   description: Three grumpy heads, one big appetite.
   tier: 2
   behaviour: 13
-  maxHp: 3200
+  maxHp: 2560
   damage: 22
   speed: 1.2
   radius: 1.7

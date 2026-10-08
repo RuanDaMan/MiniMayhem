@@ -17,7 +17,7 @@ MonoBehaviour:
   description: A minty knight with a mean charge.
   tier: 1
   behaviour: 13
-  maxHp: 2600
+  maxHp: 1238
   damage: 34
   speed: 2.3
   radius: 1.1

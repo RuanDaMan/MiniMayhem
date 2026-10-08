@@ -17,7 +17,7 @@ MonoBehaviour:
   description: Fires a fan of needles.
   tier: 0
   behaviour: 3
-  maxHp: 26
+  maxHp: 16
   damage: 8
   speed: 1
   radius: 0.5

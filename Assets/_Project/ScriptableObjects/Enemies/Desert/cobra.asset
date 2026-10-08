@@ -17,7 +17,7 @@ MonoBehaviour:
   description: Hypnotic spirals of venom.
   tier: 1
   behaviour: 13
-  maxHp: 800
+  maxHp: 500
   damage: 18
   speed: 2.2
   radius: 0.95
